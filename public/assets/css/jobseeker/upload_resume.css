@@ -1,0 +1,1001 @@
+/* ==========================================================
+   Online Job Portal System
+   Job Seeker — Upload Resume
+   File: assets/css/upload_resume.css
+   Scope: .resume-upload-page
+   ========================================================== */
+
+.resume-upload-page {
+    /* Fallback tokens — overridden by _tokens.css if loaded */
+    --ru-brand-50:  var(--brand-50,  #eff6ff);
+    --ru-brand-100: var(--brand-100, #dbeafe);
+    --ru-brand-200: var(--brand-200, #bfdbfe);
+    --ru-brand-500: var(--brand-500, #2563eb);
+    --ru-brand-600: var(--brand-600, #1d4ed8);
+    --ru-brand-800: var(--brand-800, #1e3a8a);
+    --ru-brand-900: var(--brand-900, #0f172a);
+
+    --ru-success-50:  var(--success-50,  #f0fdf4);
+    --ru-success-100: var(--success-100, #dcfce7);
+    --ru-success-500: var(--success-500, #16a34a);
+    --ru-success-700: var(--success-700, #166534);
+
+    --ru-warn-50:  var(--warn-50,  #fffbeb);
+    --ru-warn-100: var(--warn-100, #fef3c7);
+    --ru-warn-500: var(--warn-500, #d97706);
+    --ru-warn-700: var(--warn-700, #92400e);
+
+    --ru-danger-50:  var(--danger-50,  #fef2f2);
+    --ru-danger-100: var(--danger-100, #fee2e2);
+    --ru-danger-500: var(--danger-500, #dc2626);
+    --ru-danger-700: var(--danger-700, #991b1b);
+
+    --ru-neutral-50:  var(--neutral-50,  #f8fafc);
+    --ru-neutral-100: var(--neutral-100, #f1f5f9);
+    --ru-neutral-200: var(--neutral-200, #e2e8f0);
+    --ru-neutral-300: var(--neutral-300, #cbd5e1);
+    --ru-neutral-400: var(--neutral-400, #94a3b8);
+    --ru-neutral-500: var(--neutral-500, #64748b);
+    --ru-neutral-700: var(--neutral-700, #334155);
+
+    --ru-surface: var(--surface-0, #ffffff);
+    --ru-border:  var(--border-soft, #e2e8f0);
+    --ru-text:    var(--text-strong, #0f172a);
+    --ru-muted:   var(--text-muted, #64748b);
+
+    --ru-radius-sm: var(--radius-sm, 8px);
+    --ru-radius-md: var(--radius-md, 12px);
+    --ru-radius-lg: var(--radius-lg, 16px);
+
+    --ru-shadow-xs: var(--shadow-xs, 0 1px 2px rgba(15, 23, 42, 0.05));
+    --ru-shadow-sm: var(--shadow-sm, 0 4px 12px rgba(15, 23, 42, 0.06));
+    --ru-shadow-md: var(--shadow-md, 0 8px 24px rgba(15, 23, 42, 0.08));
+
+    --ru-focus: var(--focus-ring, 0 0 0 3px rgba(37, 99, 235, 0.25));
+    --ru-transition: var(--transition-base, 0.22s cubic-bezier(0.4, 0, 0.2, 1));
+
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.resume-upload-page *,
+.resume-upload-page *::before,
+.resume-upload-page *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   Page header
+   ========================================================== */
+
+.resume-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 26px 28px;
+    margin-bottom: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1e3a8a 55%,
+            #2563eb 100%
+        );
+
+    border-radius: var(--ru-radius-lg);
+    box-shadow: var(--ru-shadow-md);
+    color: #ffffff;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-page-header::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -80px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+.resume-page-header__content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.resume-page-header__icon {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 24px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.resume-page-header__tag {
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.resume-page-header h1 {
+    margin: 0 0 6px;
+    color: #ffffff;
+    font-size: clamp(22px, 2.6vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+}
+
+.resume-page-header p {
+    margin: 0;
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 44px;
+    padding: 0 18px;
+
+    border: 1px solid transparent;
+    border-radius: var(--ru-radius-sm);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        background var(--ru-transition),
+        border-color var(--ru-transition),
+        color var(--ru-transition),
+        transform var(--ru-transition),
+        box-shadow var(--ru-transition);
+}
+
+.resume-btn i { font-size: 12px; }
+
+.resume-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--ru-focus);
+}
+
+.resume-btn-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.resume-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.resume-btn-light {
+    background: var(--ru-surface);
+    color: var(--ru-neutral-700);
+    border-color: var(--ru-border);
+}
+
+.resume-btn-light:hover {
+    background: var(--ru-neutral-50);
+    color: var(--ru-text);
+    border-color: var(--ru-neutral-300);
+}
+
+.resume-btn-primary {
+    background: linear-gradient(135deg, var(--ru-brand-500), var(--ru-brand-800));
+    color: #ffffff;
+    border-color: var(--ru-brand-500);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.22);
+}
+
+.resume-btn-primary:hover {
+    background: linear-gradient(135deg, var(--ru-brand-600), var(--ru-brand-800));
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+}
+
+.resume-btn-primary:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ==========================================================
+   Upload card
+   ========================================================== */
+
+.resume-upload-card {
+    background: var(--ru-surface);
+    border: 1px solid var(--ru-border);
+    border-radius: var(--ru-radius-lg);
+    box-shadow: var(--ru-shadow-sm);
+    overflow: hidden;
+    margin-bottom: 22px;
+}
+
+.resume-upload-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--ru-border);
+    background: linear-gradient(180deg, #ffffff 0%, var(--ru-neutral-50) 100%);
+}
+
+.resume-upload-card__header h2 {
+    margin: 0 0 4px;
+    color: var(--ru-text);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.resume-upload-card__header p {
+    margin: 0;
+    color: var(--ru-muted);
+    font-size: 13px;
+}
+
+.resume-upload-card__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 13px;
+    border-radius: 999px;
+
+    background: var(--ru-success-50);
+    color: var(--ru-success-700);
+    border: 1px solid var(--ru-success-100);
+
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.resume-upload-card__badge i {
+    font-size: 11px;
+    color: var(--ru-success-500);
+}
+
+/* ==========================================================
+   Form
+   ========================================================== */
+
+.resume-upload-form {
+    padding: 26px;
+}
+
+/* ==========================================================
+   Dropzone
+   ========================================================== */
+
+.resume-dropzone {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 300px;
+
+    padding: 40px 24px;
+
+    border: 2px dashed var(--ru-neutral-300);
+    border-radius: var(--ru-radius-md);
+
+    background: linear-gradient(180deg, var(--ru-neutral-50), #ffffff);
+
+    cursor: pointer;
+
+    transition:
+        border-color var(--ru-transition),
+        background var(--ru-transition),
+        transform var(--ru-transition),
+        box-shadow var(--ru-transition);
+}
+
+.resume-dropzone:hover {
+    border-color: var(--ru-brand-500);
+    background: linear-gradient(180deg, var(--ru-brand-50), #ffffff);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+}
+
+.resume-dropzone.is-dragover {
+    border-color: var(--ru-brand-500);
+    background: linear-gradient(180deg, var(--ru-brand-50), #ffffff);
+    transform: scale(1.005);
+    box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
+}
+
+.resume-dropzone.has-file {
+    min-height: auto;
+    padding: 22px;
+    border-style: solid;
+    border-color: var(--ru-brand-100);
+    background: var(--ru-brand-50);
+    cursor: default;
+}
+
+.resume-dropzone.has-file:hover {
+    border-color: var(--ru-brand-200);
+    background: var(--ru-brand-50);
+    box-shadow: none;
+}
+
+.resume-file-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.resume-dropzone.has-file .resume-file-input {
+    display: none;
+}
+
+/* ---------- Default content ---------- */
+
+.resume-dropzone-content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+.resume-upload-icon {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, var(--ru-brand-50), var(--ru-brand-100));
+    color: var(--ru-brand-500);
+    font-size: 30px;
+
+    transition: transform var(--ru-transition);
+}
+
+.resume-dropzone:hover .resume-upload-icon,
+.resume-dropzone.is-dragover .resume-upload-icon {
+    transform: translateY(-3px) scale(1.04);
+}
+
+.resume-dropzone-content h3 {
+    margin: 0 0 8px;
+    color: var(--ru-text);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.resume-dropzone-content p {
+    margin: 0 0 18px;
+    color: var(--ru-muted);
+    font-size: 13.5px;
+}
+
+.browse-text {
+    color: var(--ru-brand-500);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.resume-file-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.resume-file-info > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 10px;
+    border-radius: 999px;
+
+    background: var(--ru-surface);
+    border: 1px solid var(--ru-border);
+
+    color: var(--ru-neutral-700);
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.resume-file-info > span i {
+    font-size: 10px;
+    color: var(--ru-neutral-400);
+}
+
+.resume-file-info > span:last-child {
+    background: transparent;
+    border: none;
+    color: var(--ru-neutral-400);
+    padding: 0;
+}
+
+/* ---------- Selected file preview ---------- */
+
+.selected-file {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 6px;
+}
+
+.selected-file[hidden] {
+    display: none;
+}
+
+.selected-file-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: var(--ru-brand-500);
+    color: #ffffff;
+    font-size: 20px;
+
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+.selected-file-icon.is-pdf {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    box-shadow: 0 8px 18px rgba(220, 38, 38, 0.25);
+}
+
+.selected-file-icon.is-word {
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+.selected-file-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.selected-file-details strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: var(--ru-text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.selected-file-details span {
+    color: var(--ru-muted);
+    font-size: 12px;
+}
+
+.remove-file-btn {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--ru-danger-100);
+    border-radius: 10px;
+
+    background: var(--ru-danger-50);
+    color: var(--ru-danger-500);
+
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: all var(--ru-transition);
+}
+
+.remove-file-btn:hover {
+    background: var(--ru-danger-100);
+    color: var(--ru-danger-700);
+    transform: scale(1.05);
+}
+
+.remove-file-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
+}
+
+/* ==========================================================
+   Upload requirements
+   ========================================================== */
+
+.upload-requirements {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+
+    margin-top: 20px;
+    padding: 18px;
+
+    border: 1px solid var(--ru-border);
+    border-radius: var(--ru-radius-md);
+    background: var(--ru-neutral-50);
+}
+
+.requirement-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--ru-neutral-700);
+    font-size: 12.5px;
+    font-weight: 500;
+}
+
+.requirement-item i {
+    flex-shrink: 0;
+    color: var(--ru-success-500);
+    font-size: 14px;
+}
+
+/* ==========================================================
+   Security notice
+   ========================================================== */
+
+.resume-security-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-top: 18px;
+    padding: 16px 18px;
+
+    border: 1px solid var(--ru-brand-100);
+    border-radius: var(--ru-radius-md);
+    background: linear-gradient(135deg, var(--ru-brand-50), #f8fbff);
+}
+
+.resume-security-notice__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    background: var(--ru-brand-100);
+    color: var(--ru-brand-500);
+    font-size: 15px;
+}
+
+.resume-security-notice strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ru-brand-800);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.resume-security-notice p {
+    margin: 0;
+    color: var(--ru-neutral-700);
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+/* ==========================================================
+   Form actions
+   ========================================================== */
+
+.resume-upload-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid var(--ru-border);
+}
+
+/* ==========================================================
+   Resume tips
+   ========================================================== */
+
+.resume-tips-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    padding: 22px 24px;
+    border-radius: var(--ru-radius-lg);
+
+    background: linear-gradient(135deg, var(--ru-warn-50), #fffaeb);
+    border: 1px solid var(--ru-warn-100);
+}
+
+.resume-tips-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: var(--ru-warn-100);
+    color: var(--ru-warn-500);
+    font-size: 18px;
+}
+
+.resume-tips-card h3 {
+    margin: 0 0 6px;
+    color: var(--ru-warn-700);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.resume-tips-card p {
+    margin: 0 0 12px;
+    color: var(--ru-neutral-700);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.resume-tips-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 20px;
+}
+
+.resume-tips-card li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--ru-neutral-700);
+    font-size: 12.5px;
+    line-height: 1.55;
+}
+
+.resume-tips-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ru-warn-500);
+    opacity: 0.7;
+}
+
+/* ==========================================================
+   Validation state
+   ========================================================== */
+
+.resume-dropzone.has-error {
+    border-color: var(--ru-danger-500);
+    background: linear-gradient(180deg, var(--ru-danger-50), #ffffff);
+}
+
+.resume-dropzone.has-error .resume-upload-icon {
+    background: var(--ru-danger-50);
+    color: var(--ru-danger-500);
+}
+
+.resume-error-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 12px;
+    padding: 10px 14px;
+
+    border-radius: var(--ru-radius-sm);
+    background: var(--ru-danger-50);
+    color: var(--ru-danger-700);
+    border: 1px solid var(--ru-danger-100);
+
+    font-size: 12.5px;
+    font-weight: 500;
+}
+
+.resume-error-message i {
+    font-size: 14px;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+@media (max-width: 992px) {
+    .resume-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .resume-page-header__content {
+        width: 100%;
+    }
+
+    .resume-btn-secondary {
+        width: 100%;
+    }
+
+    .upload-requirements {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-tips-card ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .resume-page-header {
+        padding: 22px;
+    }
+
+    .resume-page-header__icon {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .resume-page-header h1 {
+        font-size: 21px;
+    }
+
+    .resume-page-header p {
+        font-size: 12.5px;
+    }
+
+    .resume-upload-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 20px;
+    }
+
+    .resume-upload-form {
+        padding: 20px;
+    }
+
+    .resume-dropzone {
+        min-height: 240px;
+        padding: 30px 18px;
+    }
+
+    .resume-upload-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 24px;
+    }
+
+    .resume-dropzone-content h3 {
+        font-size: 15px;
+    }
+
+    .selected-file-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .resume-tips-card {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-page-header {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .resume-page-header__content {
+        gap: 14px;
+        align-items: flex-start;
+    }
+
+    .resume-page-header__icon {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .resume-page-header h1 {
+        font-size: 19px;
+    }
+
+    .resume-upload-form {
+        padding: 16px;
+    }
+
+    .resume-dropzone {
+        min-height: 200px;
+        padding: 26px 14px;
+    }
+
+    .resume-upload-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .resume-file-info > span {
+        font-size: 10.5px;
+        padding: 4px 8px;
+    }
+
+    .resume-upload-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .resume-upload-actions .resume-btn {
+        width: 100%;
+    }
+
+    .resume-security-notice {
+        padding: 14px;
+    }
+
+    .resume-security-notice__icon {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+}
+
+/* ==========================================================
+   Dark mode
+   ========================================================== */
+
+[data-theme="dark"] .resume-upload-card__header {
+    background: linear-gradient(180deg, var(--ru-surface) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+[data-theme="dark"] .resume-dropzone {
+    background: linear-gradient(180deg, rgba(148, 163, 184, 0.05), transparent);
+}
+
+[data-theme="dark"] .resume-dropzone:hover,
+[data-theme="dark"] .resume-dropzone.is-dragover {
+    background: linear-gradient(180deg, rgba(96, 165, 250, 0.1), transparent);
+}
+
+[data-theme="dark"] .resume-dropzone.has-file {
+    background: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme="dark"] .upload-requirements {
+    background: rgba(148, 163, 184, 0.05);
+}
+
+[data-theme="dark"] .resume-security-notice {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.08), transparent);
+}
+
+[data-theme="dark"] .resume-security-notice__icon {
+    background: rgba(96, 165, 250, 0.15);
+}
+
+[data-theme="dark"] .resume-tips-card {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), transparent);
+}
+
+[data-theme="dark"] .resume-tips-icon {
+    background: rgba(251, 191, 36, 0.15);
+}
+
+/* ==========================================================
+   Reduced motion + print
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .resume-upload-page *,
+    .resume-upload-page *::before,
+    .resume-upload-page *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+@media print {
+    .resume-upload-actions,
+    .resume-btn-secondary,
+    .remove-file-btn {
+        display: none !important;
+    }
+
+    .resume-upload-card,
+    .resume-tips-card {
+        box-shadow: none;
+        border: 1px solid #d1d5db;
+    }
+}

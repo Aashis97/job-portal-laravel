@@ -1,0 +1,1549 @@
+/* ==========================================================
+
+PAGE BASE
+========================================================== */
+
+.jobseeker-apply-page,
+.jobseeker-apply-page *,
+.jobseeker-apply-page *::before,
+.jobseeker-apply-page *::after {
+box-sizing: border-box;
+}
+
+.jobseeker-apply-page {
+width: 100%;
+max-width: 1180px;
+margin: 0 auto;
+padding: 30px 25px 50px;
+
+color: #0f172a;
+
+font-family: "Poppins", sans-serif;
+
+}
+
+/* ==========================================================
+2. PAGE HEADER
+========================================================== */
+
+.apply-page-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+width: 100%;
+margin-bottom: 25px;
+
+}
+
+.apply-header-content {
+min-width: 0;
+}
+
+.apply-page-tag {
+display: inline-flex;
+align-items: center;
+gap: 7px;
+
+margin-bottom: 9px;
+padding: 6px 12px;
+
+border: 1px solid #bfdbfe;
+border-radius: 7px;
+
+background: #eff6ff;
+color: #2563eb;
+
+font-size: 10px;
+font-weight: 700;
+
+line-height: 1.3;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+
+}
+
+.apply-page-tag i {
+font-size: 10px;
+}
+
+.apply-page-header h1 {
+margin: 0;
+
+color: #0f172a;
+
+font-size: 27px;
+font-weight: 700;
+line-height: 1.35;
+
+letter-spacing: -0.5px;
+
+word-break: break-word;
+
+}
+
+/* ==========================================================
+3. MAIN APPLICATION CARD
+========================================================== */
+
+.apply-card {
+width: 100%;
+overflow: hidden;
+
+border: 1px solid #e2e8f0;
+border-radius: 18px;
+
+background: #ffffff;
+
+box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.07),
+    0 3px 10px rgba(15, 23, 42, 0.03);
+
+}
+
+/* ==========================================================
+4. CARD HEADER
+========================================================== */
+
+.apply-card-header {
+display: flex;
+align-items: center;
+gap: 15px;
+
+width: 100%;
+
+padding: 22px 25px;
+
+border-bottom: 1px solid #e8edf4;
+
+background:
+    linear-gradient(
+        135deg,
+        #eff6ff 0%,
+        #f8fbff 45%,
+        #ffffff 100%
+    );
+
+}
+
+.apply-card-header-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 48px;
+height: 48px;
+min-width: 48px;
+
+border-radius: 13px;
+
+background:
+    linear-gradient(
+        135deg,
+        #1e3a8a,
+        #2563eb
+    );
+
+color: #ffffff;
+
+font-size: 17px;
+
+box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.20);
+
+}
+
+.apply-card-header h2 {
+margin: 0 0 4px;
+
+color: #0f172a;
+
+font-size: 17px;
+font-weight: 700;
+line-height: 1.4;
+
+}
+
+.apply-card-header p {
+margin: 0;
+
+color: #64748b;
+
+font-size: 11px;
+font-weight: 400;
+line-height: 1.55;
+
+}
+
+/* ==========================================================
+5. CARD BODY
+========================================================== */
+
+.apply-card-body {
+width: 100%;
+padding: 27px 25px 30px;
+}
+
+/* ==========================================================
+6. JOB INFORMATION
+========================================================== */
+
+.apply-job-info {
+display: flex;
+align-items: center;
+gap: 14px;
+
+width: 100%;
+
+margin-bottom: 24px;
+padding: 16px;
+
+border: 1px solid #dbeafe;
+border-radius: 12px;
+
+background:
+    linear-gradient(
+        135deg,
+        #f8fbff,
+        #ffffff
+    );
+
+}
+
+.apply-job-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 46px;
+height: 46px;
+min-width: 46px;
+
+border: 1px solid #dbeafe;
+border-radius: 11px;
+
+background: #eff6ff;
+color: #2563eb;
+
+font-size: 16px;
+
+}
+
+.apply-job-info-content {
+min-width: 0;
+flex: 1;
+}
+
+.apply-job-info-content h3 {
+overflow: hidden;
+
+margin: 0 0 5px;
+
+color: #0f172a;
+
+font-size: 15px;
+font-weight: 700;
+line-height: 1.45;
+
+text-overflow: ellipsis;
+white-space: nowrap;
+
+}
+
+.apply-company-name {
+display: flex;
+align-items: center;
+gap: 7px;
+
+color: #64748b;
+
+font-size: 11px;
+font-weight: 500;
+line-height: 1.5;
+
+}
+
+.apply-company-name i {
+color: #2563eb;
+
+font-size: 10px;
+
+}
+
+/* ==========================================================
+7. APPLICATION NOTICE
+========================================================== */
+
+.apply-notice {
+display: flex;
+align-items: flex-start;
+gap: 11px;
+
+width: 100%;
+
+margin-bottom: 24px;
+padding: 14px 15px;
+
+border: 1px solid #bfdbfe;
+border-radius: 11px;
+
+background: #eff6ff;
+color: #1e40af;
+
+font-size: 10.5px;
+font-weight: 400;
+line-height: 1.65;
+
+}
+
+.apply-notice > i {
+flex: 0 0 auto;
+
+margin-top: 2px;
+
+color: #2563eb;
+
+font-size: 13px;
+
+}
+
+.apply-notice strong {
+color: #1e3a8a;
+
+font-weight: 700;
+
+}
+
+/* ==========================================================
+8. FORM
+========================================================== */
+
+.apply-form {
+width: 100%;
+margin: 0;
+}
+
+.apply-form-group {
+width: 100%;
+margin-bottom: 22px;
+}
+
+.apply-form-group label {
+display: block;
+
+margin-bottom: 8px;
+
+color: #334155;
+
+font-size: 12px;
+font-weight: 600;
+line-height: 1.5;
+
+}
+
+.apply-form-group label .optional {
+margin-left: 5px;
+
+color: #94a3b8;
+
+font-size: 10px;
+font-weight: 400;
+
+}
+
+/* ==========================================================
+9. TEXTAREA WRAPPER
+========================================================== */
+
+.apply-textarea-wrapper {
+position: relative;
+
+width: 100%;
+
+}
+
+.apply-textarea-wrapper > i {
+position: absolute;
+
+top: 16px;
+left: 15px;
+
+z-index: 2;
+
+color: #94a3b8;
+
+font-size: 13px;
+
+pointer-events: none;
+
+transition: color 0.2s ease;
+
+}
+
+/* ==========================================================
+10. COVER LETTER TEXTAREA
+========================================================== */
+
+.apply-textarea-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.apply-textarea-wrapper::before,
+.apply-textarea-wrapper::after {
+    pointer-events: none;
+}
+
+.apply-textarea-wrapper > i {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    z-index: 2;
+
+    color: #94a3b8;
+    font-size: 13px;
+
+    pointer-events: none;
+}
+
+.apply-textarea {
+    display: block;
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-height: 210px;
+
+    margin: 0;
+    padding: 14px 15px 14px 41px;
+
+    border: 1px solid #d9e2ec;
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.75;
+
+    resize: vertical;
+    cursor: text;
+    pointer-events: auto;
+}
+
+.apply-textarea:hover {
+    border-color: #b9c6d6;
+}
+
+.apply-textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+
+    outline: none;
+}
+
+.apply-textarea-wrapper:focus-within > i {
+    color: #2563eb;
+}
+
+/* ==========================================================
+10. COVER LETTER TEXTAREA
+========================================================== */
+
+.apply-textarea {
+    display: block;
+
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-height: 210px;
+
+    margin: 0;
+    padding: 14px 15px 14px 41px;
+
+    border: 1px solid #d9e2ec;
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.75;
+
+    resize: vertical;
+
+    cursor: text;
+
+    pointer-events: auto;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* Placeholder */
+
+.apply-textarea::placeholder {
+    color: #a1adbb;
+    opacity: 1;
+}
+
+
+/* Hover */
+
+.apply-textarea:hover {
+    border-color: #b9c6d6;
+}
+
+
+/* Focus */
+
+.apply-textarea:focus {
+    border-color: #2563eb;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+
+    outline: none;
+}
+
+
+/* Icon when textarea is focused */
+
+.apply-textarea-wrapper:focus-within > i {
+    color: #2563eb;
+}
+
+/* ==========================================================
+12. FORM ACTIONS
+========================================================== */
+
+.apply-form-actions {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 10px;
+
+width: 100%;
+
+padding-top: 20px;
+
+border-top: 1px solid #edf1f6;
+
+}
+
+/* ==========================================================
+13. BUTTON BASE
+========================================================== */
+
+.apply-submit-btn,
+.apply-cancel-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+
+min-height: 44px;
+
+padding: 10px 18px;
+
+border-radius: 10px;
+
+font-family: "Poppins", sans-serif;
+font-size: 11.5px;
+font-weight: 600;
+line-height: 1.3;
+
+text-align: center;
+text-decoration: none;
+
+cursor: pointer;
+
+transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+
+}
+
+/* ==========================================================
+14. SUBMIT BUTTON
+========================================================== */
+
+.apply-submit-btn {
+min-width: 170px;
+
+border: 1px solid #2563eb;
+
+background:
+    linear-gradient(
+        135deg,
+        #1d4ed8,
+        #2563eb
+    );
+
+color: #ffffff;
+
+box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.18);
+
+}
+
+.apply-submit-btn i {
+font-size: 11px;
+}
+
+.apply-submit-btn {
+border-color: #1d4ed8;
+
+background:
+    linear-gradient(
+        135deg,
+        #1e40af,
+        #1d4ed8
+    );
+
+color: #ffffff;
+
+box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.25);
+
+transform: translateY(-1px);
+
+}
+
+.apply-submit-btn {
+transform: translateY(0);
+
+box-shadow:
+    0 5px 12px rgba(37, 99, 235, 0.18);
+
+}
+
+.apply-submit-btn {
+outline: none;
+
+box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.18),
+    0 7px 18px rgba(37, 99, 235, 0.18);
+
+}
+
+.apply-submit-btn {
+opacity: 0.65;
+
+cursor: not-allowed;
+
+transform: none;
+
+box-shadow: none;
+
+}
+
+/* ==========================================================
+15. CANCEL BUTTON
+========================================================== */
+
+.apply-cancel-btn {
+min-width: 105px;
+
+border: 1px solid #d7e0ea;
+
+background: #ffffff;
+color: #475569;
+
+}
+
+.apply-cancel-btn i {
+font-size: 10px;
+}
+
+.apply-cancel-btn {
+border-color: #cbd5e1;
+
+background: #f8fafc;
+color: #1e293b;
+
+transform: translateY(-1px);
+
+box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.06);
+
+}
+
+.apply-cancel-btn {
+transform: translateY(0);
+}
+
+.apply-cancel-btn {
+outline: none;
+
+border-color: #2563eb;
+
+box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10);
+
+}
+
+/* ==========================================================
+16. VALIDATION STATE
+========================================================== */
+
+.apply-form-group.has-error .apply-textarea {
+border-color: #ef4444;
+}
+
+.apply-form-group.has-error .apply-textarea {
+border-color: #ef4444;
+
+box-shadow:
+    0 0 0 3px rgba(239, 68, 68, 0.10);
+
+}
+
+.apply-field-error {
+display: block;
+
+margin-top: 6px;
+
+color: #dc2626;
+
+font-size: 10px;
+line-height: 1.45;
+
+}
+
+/* ==========================================================
+17. FLASH / ALERT STYLES
+========================================================== */
+
+.apply-alert {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+
+width: 100%;
+
+margin-bottom: 20px;
+padding: 13px 15px;
+
+border-radius: 10px;
+
+font-size: 11px;
+line-height: 1.55;
+
+}
+
+.apply-alert i {
+flex: 0 0 auto;
+
+margin-top: 2px;
+
+}
+
+.apply-alert.success {
+border: 1px solid #bbf7d0;
+
+background: #f0fdf4;
+color: #15803d;
+
+}
+
+.apply-alert.danger {
+border: 1px solid #fecaca;
+
+background: #fef2f2;
+color: #b91c1c;
+
+}
+
+.apply-alert.warning {
+border: 1px solid #fde68a;
+
+background: #fffbeb;
+color: #92400e;
+
+}
+
+
+.mb-4
+.mb-3
+.mb-1
+.mb-0
+.card
+.card-body
+.form-control
+.d-flex
+.gap-2
+.btn
+.btn-primary
+.btn-outline
+.text-muted
+
+
+/* Card compatibility */
+
+.jobseeker-apply-page .card {
+width: 100%;
+}
+
+/* Card body compatibility */
+
+.jobseeker-apply-page .card-body {
+width: 100%;
+}
+
+/* Form control compatibility */
+
+.jobseeker-apply-page .form-control {
+width: 100%;
+}
+
+/* Text muted */
+
+.jobseeker-apply-page .text-muted {
+color: #64748b;
+}
+
+/* Display flex */
+
+.jobseeker-apply-page .d-flex {
+display: flex;
+}
+
+/* Gap 2 */
+
+.jobseeker-apply-page .gap-2 {
+gap: 10px;
+}
+
+/* Margin bottom */
+
+.jobseeker-apply-page .mb-0 {
+margin-bottom: 0;
+}
+
+.jobseeker-apply-page .mb-1 {
+margin-bottom: 5px;
+}
+
+.jobseeker-apply-page .mb-3 {
+margin-bottom: 16px;
+}
+
+.jobseeker-apply-page .mb-4 {
+margin-bottom: 24px;
+}
+
+/* ==========================================================
+19. 1440px
+========================================================== */
+
+@media (max-width: 1440px) {
+
+.jobseeker-apply-page {
+    max-width: 1150px;
+}
+
+}
+
+/* ==========================================================
+20. 1200px
+========================================================== */
+
+@media (max-width: 1200px) {
+
+.jobseeker-apply-page {
+    max-width: 1080px;
+
+    padding: 28px 22px 45px;
+}
+
+.apply-page-header h1 {
+    font-size: 25px;
+}
+
+.apply-card-body {
+    padding: 25px 23px 28px;
+}
+
+}
+
+/* ==========================================================
+21. 992px
+========================================================== */
+
+@media (max-width: 992px) {
+
+.jobseeker-apply-page {
+    max-width: 100%;
+
+    padding: 25px 20px 45px;
+}
+
+.apply-page-header {
+    margin-bottom: 22px;
+}
+
+.apply-page-header h1 {
+    font-size: 24px;
+}
+
+.apply-card-header {
+    padding: 20px 22px;
+}
+
+.apply-card-body {
+    padding: 24px 22px 27px;
+}
+
+}
+
+/* ==========================================================
+22. 768px
+========================================================== */
+
+@media (max-width: 768px) {
+
+.jobseeker-apply-page {
+    padding: 22px 16px 40px;
+}
+
+.apply-page-header {
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+}
+
+.apply-page-header h1 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.apply-page-tag {
+    margin-bottom: 7px;
+
+    padding: 5px 10px;
+
+    font-size: 9px;
+}
+
+.apply-card {
+    border-radius: 15px;
+}
+
+.apply-card-header {
+    gap: 12px;
+
+    padding: 18px 19px;
+}
+
+.apply-card-header-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+
+    border-radius: 11px;
+
+    font-size: 15px;
+}
+
+.apply-card-header h2 {
+    font-size: 15px;
+}
+
+.apply-card-header p {
+    font-size: 10px;
+}
+
+.apply-card-body {
+    padding: 21px 19px 24px;
+}
+
+.apply-job-info {
+    padding: 14px;
+}
+
+.apply-job-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+}
+
+.apply-textarea {
+    min-height: 200px;
+}
+
+.apply-form-actions {
+    justify-content: stretch;
+}
+
+.apply-cancel-btn,
+.apply-submit-btn {
+    flex: 1;
+}
+
+}
+
+/* ==========================================================
+23. 480px
+========================================================== */
+
+@media (max-width: 480px) {
+
+.jobseeker-apply-page {
+    padding: 17px 10px 30px;
+}
+
+.apply-page-header {
+    margin-bottom: 17px;
+}
+
+.apply-page-header h1 {
+    font-size: 19px;
+}
+
+.apply-page-tag {
+    padding: 5px 9px;
+
+    font-size: 8.5px;
+}
+
+.apply-card {
+    border-radius: 13px;
+}
+
+.apply-card-header {
+    gap: 10px;
+
+    padding: 16px 14px;
+}
+
+.apply-card-header-icon {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+}
+
+.apply-card-header h2 {
+    margin-bottom: 3px;
+
+    font-size: 13.5px;
+}
+
+.apply-card-header p {
+    font-size: 9px;
+}
+
+.apply-card-body {
+    padding: 17px 14px 20px;
+}
+
+.apply-job-info {
+    gap: 10px;
+
+    margin-bottom: 18px;
+    padding: 11px;
+
+    border-radius: 10px;
+}
+
+.apply-job-icon {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+}
+
+.apply-job-info-content h3 {
+    margin-bottom: 3px;
+
+    font-size: 11.5px;
+}
+
+.apply-company-name {
+    gap: 5px;
+
+    font-size: 9px;
+}
+
+.apply-company-name i {
+    font-size: 8px;
+}
+
+.apply-notice {
+    gap: 8px;
+
+    margin-bottom: 19px;
+    padding: 11px 12px;
+
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.apply-notice > i {
+    font-size: 11px;
+}
+
+.apply-form-group {
+    margin-bottom: 18px;
+}
+
+.apply-form-group label {
+    margin-bottom: 7px;
+
+    font-size: 10.5px;
+}
+
+.apply-form-group label .optional {
+    font-size: 9px;
+}
+
+.apply-textarea-wrapper > i {
+    top: 14px;
+    left: 12px;
+
+    font-size: 11px;
+}
+
+.apply-textarea {
+    min-height: 180px;
+
+    padding: 12px 11px 12px 34px;
+
+    border-radius: 9px;
+
+    font-size: 10.5px;
+    line-height: 1.7;
+}
+
+.apply-help-text {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+
+    margin-top: 6px;
+
+    font-size: 8.5px;
+}
+
+.apply-character-count {
+    font-size: 8.5px;
+}
+
+.apply-form-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+
+    padding-top: 16px;
+}
+
+.apply-submit-btn,
+.apply-cancel-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+
+    flex: none;
+
+    font-size: 10px;
+}
+
+.apply-alert {
+    padding: 11px 12px;
+
+    font-size: 9.5px;
+}
+
+}
+
+/* ==========================================================
+24. 320px
+========================================================== */
+
+@media (max-width: 320px) {
+
+.jobseeker-apply-page {
+    padding: 14px 7px 25px;
+}
+
+.apply-page-header {
+    margin-bottom: 14px;
+}
+
+.apply-page-header h1 {
+    font-size: 17px;
+}
+
+.apply-page-tag {
+    gap: 5px;
+
+    margin-bottom: 6px;
+    padding: 4px 7px;
+
+    font-size: 7.5px;
+}
+
+.apply-card {
+    border-radius: 11px;
+}
+
+.apply-card-header {
+    gap: 8px;
+
+    padding: 13px 11px;
+}
+
+.apply-card-header-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+}
+
+.apply-card-header h2 {
+    font-size: 11.5px;
+}
+
+.apply-card-header p {
+    font-size: 8px;
+}
+
+.apply-card-body {
+    padding: 14px 11px 17px;
+}
+
+.apply-job-info {
+    gap: 8px;
+
+    padding: 9px;
+
+    border-radius: 8px;
+}
+
+.apply-job-icon {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+}
+
+.apply-job-info-content h3 {
+    font-size: 10px;
+}
+
+.apply-company-name {
+    font-size: 8px;
+}
+
+.apply-notice {
+    gap: 7px;
+
+    padding: 9px;
+
+    font-size: 8px;
+}
+
+.apply-notice > i {
+    font-size: 10px;
+}
+
+.apply-form-group label {
+    font-size: 9.5px;
+}
+
+.apply-textarea {
+    min-height: 155px;
+
+    padding: 10px 9px 10px 31px;
+
+    font-size: 9px;
+}
+
+.apply-textarea-wrapper > i {
+    top: 12px;
+    left: 11px;
+
+    font-size: 10px;
+}
+
+.apply-help-text {
+    font-size: 7.5px;
+}
+
+.apply-character-count {
+    font-size: 7.5px;
+}
+
+.apply-submit-btn,
+.apply-cancel-btn {
+    min-height: 39px;
+
+    font-size: 9px;
+}
+
+}
+
+/* ==========================================================
+25. REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+.jobseeker-apply-page *,
+.jobseeker-apply-page *::before,
+.jobseeker-apply-page *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+}
+
+}
+
+/* ==========================================================
+   Cover Letter Upload
+========================================================== */
+
+.cover-letter-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 24px 0;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cover-letter-divider::before,
+.cover-letter-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+.cover-letter-divider span {
+    padding: 0 5px;
+}
+
+
+/* ==========================================================
+   Upload Box
+========================================================== */
+
+.cover-letter-upload {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    padding: 20px;
+
+    border: 1px dashed #bfdbfe;
+    border-radius: 12px;
+
+    background: #f8fbff;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.cover-letter-upload:hover {
+    border-color: #2563eb;
+    background: #f5f9ff;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.08);
+}
+
+
+/* ==========================================================
+   Upload Icon
+========================================================== */
+
+.cover-letter-upload-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 20px;
+}
+
+
+/* ==========================================================
+   Upload Content
+========================================================== */
+
+.cover-letter-upload-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.cover-letter-upload-content h4 {
+    margin: 0 0 4px;
+
+    color: #0f172a;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cover-letter-upload-content p {
+    margin: 0 0 12px;
+
+    color: #64748b;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   Choose File Button
+========================================================== */
+
+.cover-letter-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.cover-letter-upload-btn:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   Selected File
+========================================================== */
+
+.cover-letter-file-name {
+    margin-top: 9px;
+
+    color: #64748b;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+
+    word-break: break-word;
+}
+
+.cover-letter-file-name.has-file {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   Upload Help
+========================================================== */
+
+.cover-letter-upload-help {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 8px;
+
+    color: #94a3b8;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+}
+
+.cover-letter-upload-help i {
+    color: #64748b;
+}
+
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .cover-letter-upload {
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .cover-letter-upload-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .cover-letter-upload-content h4 {
+        font-size: 12px;
+    }
+
+    .cover-letter-upload-content p {
+        font-size: 10px;
+    }
+
+}

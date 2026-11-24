@@ -1,0 +1,567 @@
+:root {
+    --premium-purple: #7754d8;
+    --premium-purple-dark: #5d3ab9;
+    --premium-purple-soft: #f0ebff;
+    --premium-ink: #29233d;
+    --premium-muted: #817a94;
+    --premium-line: rgba(112, 91, 166, 0.12);
+    --premium-surface: rgba(255, 255, 255, 0.88);
+    --premium-surface-solid: #fff;
+    --premium-shadow: 0 16px 42px rgba(62, 43, 111, 0.075);
+    --premium-glow: 0 12px 30px rgba(119, 84, 216, 0.18);
+}
+
+body:not(.dark-mode) {
+    color: var(--premium-ink);
+    background:
+        radial-gradient(ellipse at 92% 8%, rgba(196, 177, 255, 0.23), transparent 30%),
+        radial-gradient(ellipse at 35% 88%, rgba(224, 214, 255, 0.22), transparent 34%),
+        #f8f7fc;
+}
+
+body.dark-mode {
+    --premium-purple: #b49bff;
+    --premium-purple-dark: #c8b7ff;
+    --premium-purple-soft: rgba(151, 119, 230, 0.16);
+    --premium-ink: #f1edfc;
+    --premium-muted: #aaa2bd;
+    --premium-line: rgba(196, 180, 236, 0.14);
+    --premium-surface: rgba(28, 24, 42, 0.9);
+    --premium-surface-solid: #211c30;
+    --premium-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+    --premium-glow: 0 12px 30px rgba(106, 76, 182, 0.2);
+}
+
+.dashboard-wrapper {
+    background: transparent;
+}
+
+.dashboard-sidebar {
+    background: rgba(255, 255, 255, 0.9);
+    border-right-color: var(--premium-line);
+    box-shadow: 12px 0 40px rgba(56, 42, 94, 0.035);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+body.dark-mode .dashboard-sidebar {
+    background: rgba(25, 21, 38, 0.94);
+    border-right-color: var(--premium-line);
+}
+
+.sidebar-logo {
+    border-bottom-color: var(--premium-line);
+}
+
+.sidebar-logo-icon {
+    background: linear-gradient(145deg, #a487f4, #6947c4);
+    box-shadow: 0 8px 18px rgba(119, 84, 216, 0.24);
+}
+
+.sidebar-logo-text strong,
+.sidebar-logo-text span,
+.dashboard-page-title h1,
+.dashboard-user-name {
+    color: var(--premium-ink);
+}
+
+.sidebar-section-title,
+.dashboard-user-role {
+    color: var(--premium-muted);
+}
+
+.sidebar-link {
+    color: #77718a;
+    border-radius: 12px;
+}
+
+body.dark-mode .sidebar-link {
+    color: var(--premium-muted);
+}
+
+.sidebar-link:hover {
+    color: var(--premium-purple-dark);
+    background: var(--premium-purple-soft);
+}
+
+.sidebar-link.active,
+.sidebar-link.active:hover {
+    color: #fff;
+    background: linear-gradient(120deg, #8e70e7, #6744c3);
+    box-shadow: 0 9px 22px rgba(119, 84, 216, 0.25);
+}
+
+.dashboard-header {
+    background: rgba(250, 249, 253, 0.78);
+    border-bottom-color: var(--premium-line);
+    box-shadow: 0 8px 28px rgba(51, 36, 88, 0.025);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+body.dark-mode .dashboard-header {
+    background: rgba(25, 21, 38, 0.84);
+    border-bottom-color: var(--premium-line);
+}
+
+.dashboard-page-title h1 {
+    font-weight: 650;
+    letter-spacing: -0.035em;
+}
+
+.dashboard-search-form {
+    border-color: var(--premium-line);
+    border-radius: 14px;
+    background: var(--premium-surface);
+    box-shadow: 0 5px 18px rgba(51, 36, 88, 0.035);
+}
+
+.dashboard-search-form:focus-within {
+    border-color: rgba(119, 84, 216, 0.4);
+    box-shadow: 0 0 0 4px rgba(119, 84, 216, 0.09);
+}
+
+.dashboard-search-form input {
+    color: var(--premium-ink);
+}
+
+.header-icon-btn,
+.dashboard-user-button {
+    color: var(--premium-muted);
+    border-radius: 13px;
+    transition: color 0.22s ease, background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.header-icon-btn:hover,
+.dashboard-user-button:hover {
+    color: var(--premium-purple-dark);
+    background: var(--premium-purple-soft);
+}
+
+.dashboard-user-avatar {
+    box-shadow: 0 0 0 3px rgba(119, 84, 216, 0.12);
+}
+
+.dashboard-content {
+    padding: 32px clamp(20px, 3vw, 42px);
+}
+
+.admin-dashboard,
+.jobseeker-dashboard {
+    max-width: 1540px;
+    padding: 0;
+}
+
+.admin-page-header h1,
+.welcome-content h1 {
+    color: var(--premium-ink);
+    letter-spacing: -0.045em;
+}
+
+.admin-page-header p {
+    color: var(--premium-muted);
+}
+
+.admin-page-label,
+.welcome-label {
+    color: var(--premium-purple-dark);
+    background: var(--premium-purple-soft);
+    border: 1px solid rgba(119, 84, 216, 0.1);
+}
+
+.admin-page-date {
+    color: var(--premium-muted);
+    border-color: var(--premium-line);
+    border-radius: 14px;
+    background: var(--premium-surface);
+    box-shadow: var(--premium-shadow);
+    backdrop-filter: blur(14px);
+}
+
+.admin-page-date i {
+    color: var(--premium-purple);
+}
+
+.admin-stat-card,
+.employer-stat-card,
+.dashboard-stats .stat-card,
+.admin-panel,
+.employer-panel,
+.dashboard-card {
+    color: var(--premium-ink);
+    border: 1px solid var(--premium-line);
+    border-radius: 18px;
+    background: var(--premium-surface);
+    box-shadow: var(--premium-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.admin-stat-card:hover,
+.employer-stat-card:hover,
+.dashboard-stats .stat-card:hover,
+.admin-panel:hover,
+.employer-panel:hover,
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(119, 84, 216, 0.23);
+    box-shadow: 0 20px 46px rgba(75, 53, 130, 0.12), 0 0 24px rgba(162, 137, 231, 0.08);
+}
+
+.admin-stat-card::before {
+    background: linear-gradient(180deg, #b29af8, #704bc9);
+}
+
+.admin-stat-card .stat-icon,
+.employer-stat-card .stat-icon,
+.dashboard-stats .stat-icon {
+    color: var(--premium-purple-dark);
+    background: var(--premium-purple-soft);
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 1px rgba(119, 84, 216, 0.06);
+}
+
+.admin-stat-card .stat-label,
+.dashboard-stats .stat-label,
+.employer-stat-card .stat-content span {
+    color: var(--premium-muted);
+}
+
+.admin-stat-card .stat-value,
+.dashboard-stats .stat-value,
+.employer-stat-card .stat-content strong {
+    color: var(--premium-ink);
+    letter-spacing: -0.04em;
+}
+
+.admin-stat-card .stat-description,
+.dashboard-stats .stat-description,
+.employer-stat-card .stat-content small {
+    color: var(--premium-muted);
+}
+
+.admin-panel-header,
+.panel-header,
+.card-header {
+    border-bottom-color: var(--premium-line);
+}
+
+.admin-panel-header h2,
+.panel-header h2,
+.card-header h2 {
+    color: var(--premium-ink);
+    letter-spacing: -0.025em;
+}
+
+.admin-panel-header p,
+.panel-header p,
+.card-subtitle {
+    color: var(--premium-muted);
+}
+
+.admin-table th {
+    color: var(--premium-muted);
+    background: rgba(119, 84, 216, 0.045);
+}
+
+.admin-table td {
+    border-bottom-color: var(--premium-line);
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(119, 84, 216, 0.045);
+}
+
+.admin-alert {
+    border: 1px solid var(--premium-line);
+    border-radius: 16px;
+    background: var(--premium-surface);
+    box-shadow: 0 10px 26px rgba(62, 43, 111, 0.06);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.admin-alert:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--premium-glow);
+}
+
+.admin-alert-warning,
+.admin-alert-info,
+.admin-alert-danger {
+    border-left: 3px solid rgba(119, 84, 216, 0.55);
+}
+
+.employer-dashboard {
+    max-width: 1540px;
+    margin: 0 auto;
+}
+
+.employer-welcome {
+    border: 1px solid rgba(119, 84, 216, 0.14);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 88% 20%, rgba(197, 176, 255, 0.34), transparent 30%),
+        linear-gradient(118deg, rgba(255, 255, 255, 0.96), rgba(244, 239, 255, 0.9));
+    box-shadow: 0 20px 48px rgba(92, 63, 154, 0.1);
+}
+
+.employer-welcome::after {
+    background: rgba(157, 125, 232, 0.1);
+    box-shadow: 0 0 70px rgba(147, 113, 226, 0.2);
+}
+
+.employer-welcome .welcome-label,
+.employer-welcome .welcome-content h1 {
+    color: var(--premium-ink);
+}
+
+.employer-welcome .welcome-content p {
+    color: var(--premium-muted);
+}
+
+.employer-primary-btn,
+.small-primary-btn {
+    color: #fff;
+    background: linear-gradient(125deg, #9879ed, #6946c4);
+    box-shadow: 0 10px 22px rgba(119, 84, 216, 0.22);
+}
+
+.employer-primary-btn:hover,
+.small-primary-btn:hover {
+    color: #fff;
+    box-shadow: 0 14px 28px rgba(119, 84, 216, 0.3);
+}
+
+.employer-dashboard-grid {
+    gap: 20px;
+}
+
+.employer-panel,
+.admin-panel,
+.dashboard-card {
+    overflow: hidden;
+}
+
+.job-item,
+.application-item {
+    border-bottom-color: var(--premium-line);
+}
+
+.job-item-icon,
+.application-company-icon,
+.card-header-icon {
+    color: var(--premium-purple-dark);
+    background: var(--premium-purple-soft);
+    border-radius: 13px;
+}
+
+.job-item-info h3,
+.application-job-title {
+    color: var(--premium-ink);
+}
+
+.job-meta,
+.application-company,
+.application-meta {
+    color: var(--premium-muted);
+}
+
+.jobseeker-dashboard .dashboard-welcome {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(119, 84, 216, 0.15);
+    border-radius: 24px;
+    color: var(--premium-ink);
+    background:
+        radial-gradient(circle at 88% 10%, rgba(190, 169, 255, 0.32), transparent 28%),
+        linear-gradient(118deg, rgba(255, 255, 255, 0.96), rgba(243, 238, 255, 0.92));
+    box-shadow: 0 20px 48px rgba(92, 63, 154, 0.1);
+}
+
+.jobseeker-dashboard .dashboard-welcome::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: -80px;
+    bottom: -155px;
+    border-radius: 50%;
+    background: rgba(146, 111, 224, 0.14);
+    box-shadow: 0 0 70px rgba(147, 113, 226, 0.22);
+}
+
+.jobseeker-dashboard .welcome-content,
+.jobseeker-dashboard .welcome-actions {
+    position: relative;
+    z-index: 1;
+}
+
+.jobseeker-dashboard .welcome-content p {
+    color: var(--premium-muted);
+}
+
+.jobseeker-dashboard .welcome-actions .btn-primary {
+    color: #fff;
+    background: linear-gradient(125deg, #9879ed, #6946c4);
+    box-shadow: 0 10px 22px rgba(119, 84, 216, 0.22);
+}
+
+.jobseeker-dashboard .welcome-actions .btn-primary:hover {
+    color: #fff;
+    background: linear-gradient(125deg, #8867df, #5d3ab9);
+    box-shadow: var(--premium-glow);
+}
+
+.jobseeker-dashboard .welcome-actions .btn-outline {
+    color: var(--premium-purple-dark);
+    border: 1px solid rgba(119, 84, 216, 0.25);
+    background: rgba(255, 255, 255, 0.64);
+}
+
+.jobseeker-dashboard .welcome-actions .btn-outline:hover {
+    background: rgba(239, 233, 255, 0.9);
+}
+
+.dashboard-stats .stat-card {
+    padding: 21px;
+}
+
+.profile-completion .progress-bar {
+    background: var(--premium-purple-soft);
+}
+
+.profile-completion .progress-fill {
+    background: linear-gradient(90deg, #b39af8, #7551d2);
+    box-shadow: 0 0 14px rgba(119, 84, 216, 0.28);
+}
+
+.card-action,
+.view-all-link,
+.panel-link {
+    color: var(--premium-purple-dark);
+}
+
+.card-action:hover,
+.view-all-link:hover,
+.panel-link:hover {
+    color: var(--premium-purple);
+}
+
+body.dark-mode .admin-page-date,
+body.dark-mode .admin-stat-card,
+body.dark-mode .employer-stat-card,
+body.dark-mode .dashboard-stats .stat-card,
+body.dark-mode .admin-panel,
+body.dark-mode .employer-panel,
+body.dark-mode .dashboard-card,
+body.dark-mode .admin-alert {
+    color: var(--premium-ink);
+    background: var(--premium-surface);
+    border-color: var(--premium-line);
+}
+
+body.dark-mode .employer-welcome,
+body.dark-mode .jobseeker-dashboard .dashboard-welcome {
+    color: var(--premium-ink);
+    background:
+        radial-gradient(circle at 88% 12%, rgba(125, 92, 198, 0.22), transparent 30%),
+        linear-gradient(118deg, rgba(34, 29, 49, 0.96), rgba(43, 34, 66, 0.94));
+    border-color: var(--premium-line);
+}
+
+body.dark-mode .jobseeker-dashboard .welcome-actions .btn-outline {
+    color: var(--premium-ink);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--premium-line);
+}
+
+body.dark-mode .admin-table th {
+    color: var(--premium-muted);
+    background: rgba(161, 133, 225, 0.08);
+}
+
+body.dark-mode .admin-table td,
+body.dark-mode .job-item,
+body.dark-mode .application-item,
+body.dark-mode .admin-panel-header,
+body.dark-mode .panel-header,
+body.dark-mode .card-header {
+    border-color: var(--premium-line);
+}
+
+@media (max-width: 1100px) {
+    .employer-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .dashboard-content {
+        padding: 24px 18px;
+    }
+
+    .admin-stat-grid,
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .employer-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .employer-dashboard-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .jobseeker-dashboard .dashboard-welcome,
+    .employer-welcome {
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 20px 14px;
+    }
+
+    .admin-stat-grid,
+    .dashboard-stats,
+    .employer-stats {
+        gap: 12px;
+    }
+
+    .admin-stat-card,
+    .employer-stat-card,
+    .dashboard-stats .stat-card {
+        padding: 15px;
+    }
+
+    .admin-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-stat-card,
+    .employer-stat-card,
+    .dashboard-stats .stat-card,
+    .admin-panel,
+    .employer-panel,
+    .dashboard-card,
+    .admin-alert {
+        transition: none;
+    }
+
+    .admin-stat-card:hover,
+    .employer-stat-card:hover,
+    .dashboard-stats .stat-card:hover,
+    .admin-panel:hover,
+    .employer-panel:hover,
+    .dashboard-card:hover,
+    .admin-alert:hover {
+        transform: none;
+    }
+}

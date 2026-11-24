@@ -1,0 +1,1606 @@
+/* ============================================================
+   Online Job Portal System
+   Employer Panel - Applicants
+   File: assets/css/employer/applicants.css
+   ============================================================ */
+
+
+/* ============================================================
+   ROOT VARIABLES
+   ============================================================ */
+
+:root {
+
+    --app-primary: #2563eb;
+    --app-primary-dark: #1d4ed8;
+    --app-primary-light: #eff6ff;
+
+    --app-dark: #0f172a;
+    --app-dark-light: #1e293b;
+
+    --app-text: #172033;
+    --app-text-light: #64748b;
+    --app-text-muted: #94a3b8;
+
+    --app-white: #ffffff;
+    --app-bg: #f8fafc;
+    --app-border: #e2e8f0;
+
+    --app-success: #16a34a;
+    --app-success-bg: #f0fdf4;
+
+    --app-warning: #d97706;
+    --app-warning-bg: #fffbeb;
+
+    --app-danger: #dc2626;
+    --app-danger-bg: #fef2f2;
+
+    --app-purple: #7c3aed;
+    --app-purple-bg: #f5f3ff;
+
+    --app-cyan: #0891b2;
+    --app-cyan-bg: #ecfeff;
+
+    --app-radius-sm: 8px;
+    --app-radius-md: 12px;
+    --app-radius-lg: 18px;
+
+    --app-shadow-sm:
+        0 2px 8px rgba(15, 23, 42, 0.05);
+
+    --app-shadow-md:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+
+    --app-shadow-lg:
+        0 18px 45px rgba(15, 23, 42, 0.10);
+
+    --app-transition:
+        0.25s ease;
+
+}
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.employer-applicants-page {
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+
+.applicants-page-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+
+    padding: 30px;
+
+    border-radius: var(--app-radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1e3a8a 55%,
+            #2563eb 100%
+        );
+
+    color: var(--app-white);
+
+    box-shadow: var(--app-shadow-lg);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Decorative circles */
+
+.applicants-page-header::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    top: -110px;
+    right: 80px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    pointer-events: none;
+
+}
+
+
+.applicants-page-header::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    bottom: -90px;
+    right: 280px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    pointer-events: none;
+
+}
+
+
+/* Header content */
+
+.applicants-header-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.applicants-header-icon {
+
+    width: 64px;
+    height: 64px;
+
+    min-width: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    font-size: 25px;
+
+}
+
+
+.applicants-page-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.72);
+
+}
+
+
+.applicants-page-header h1 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+.applicants-page-header p {
+
+    margin: 7px 0 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.78);
+
+}
+
+
+.applicants-page-header p strong {
+
+    color: #ffffff;
+
+}
+
+
+/* Back button */
+
+.applicants-back-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 44px;
+
+    padding: 0 17px;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    position: relative;
+
+    z-index: 3;
+
+    transition:
+        background var(--app-transition),
+        transform var(--app-transition);
+
+}
+
+
+.applicants-back-btn:hover {
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+
+.applicants-alert {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-bottom: 22px;
+
+    padding: 14px 17px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+
+.applicants-alert-success {
+
+    color: #166534;
+
+    background: var(--app-success-bg);
+
+    border: 1px solid #bbf7d0;
+
+}
+
+
+.applicants-alert-error {
+
+    color: #991b1b;
+
+    background: var(--app-danger-bg);
+
+    border: 1px solid #fecaca;
+
+}
+
+
+.applicants-alert > i {
+
+    font-size: 17px;
+
+}
+
+
+/* ============================================================
+   JOB SUMMARY CARD
+   ============================================================ */
+
+.applicants-job-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+    padding: 22px;
+
+    background: var(--app-white);
+
+    border: 1px solid var(--app-border);
+
+    border-radius: var(--app-radius-lg);
+
+    box-shadow: var(--app-shadow-sm);
+
+    transition:
+        box-shadow var(--app-transition),
+        transform var(--app-transition);
+
+}
+
+
+.applicants-job-card:hover {
+
+    box-shadow: var(--app-shadow-md);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Job icon */
+
+.job-card-icon {
+
+    width: 58px;
+    height: 58px;
+
+    min-width: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    color: var(--app-primary);
+
+    background: var(--app-primary-light);
+
+    font-size: 22px;
+
+}
+
+
+/* Job content */
+
+.job-card-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.job-card-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--app-text-muted);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+}
+
+
+.job-card-content h2 {
+
+    margin: 0 0 10px;
+
+    color: var(--app-text);
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+}
+
+
+.job-card-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px 18px;
+
+}
+
+
+.job-card-meta span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--app-text-light);
+
+    font-size: 12px;
+
+}
+
+
+.job-card-meta i {
+
+    color: var(--app-primary);
+
+}
+
+
+/* Applicant count */
+
+.job-card-count {
+
+    min-width: 110px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--app-border);
+
+}
+
+
+.job-card-count strong {
+
+    display: block;
+
+    color: var(--app-primary);
+
+    font-size: 25px;
+
+    line-height: 1.2;
+
+}
+
+
+.job-card-count span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--app-text-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* ============================================================
+   MAIN APPLICANTS CARD
+   ============================================================ */
+
+.applicants-card {
+
+    background: var(--app-white);
+
+    border: 1px solid var(--app-border);
+
+    border-radius: var(--app-radius-lg);
+
+    box-shadow: var(--app-shadow-sm);
+
+    overflow: hidden;
+
+}
+
+
+/* Card header */
+
+.applicants-card-header {
+
+    padding: 24px 25px;
+
+    border-bottom: 1px solid var(--app-border);
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+    );
+
+}
+
+
+.section-eyebrow {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--app-primary);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.applicants-card-header h2 {
+
+    margin: 0;
+
+    color: var(--app-text);
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+.applicants-card-header p {
+
+    margin: 6px 0 0;
+
+    color: var(--app-text-light);
+
+    font-size: 13px;
+
+}
+
+
+/* ============================================================
+   TABLE WRAPPER
+   ============================================================ */
+
+.applicants-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.applicants-table {
+
+    width: 100%;
+
+    min-width: 980px;
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+
+}
+
+
+.applicants-table thead th {
+
+    padding: 15px 18px;
+
+    text-align: left;
+
+    color: #475569;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid var(--app-border);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+}
+
+
+.applicants-table tbody td {
+
+    padding: 17px 18px;
+
+    color: var(--app-text);
+
+    border-bottom: 1px solid #edf1f5;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+
+}
+
+
+.applicants-table tbody tr {
+
+    transition: background var(--app-transition);
+
+}
+
+
+.applicants-table tbody tr:hover {
+
+    background: #f8fbff;
+
+}
+
+
+.applicants-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+/* ============================================================
+   CANDIDATE INFO
+   ============================================================ */
+
+.candidate-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 190px;
+
+}
+
+
+.candidate-avatar {
+
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    color: var(--app-primary);
+
+    background: var(--app-primary-light);
+
+    border: 1px solid #dbeafe;
+
+    font-size: 16px;
+
+}
+
+
+.candidate-avatar img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.candidate-details {
+
+    min-width: 0;
+
+}
+
+
+.candidate-details strong {
+
+    display: block;
+
+    max-width: 180px;
+
+    overflow: hidden;
+
+    color: var(--app-text);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.candidate-details small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--app-text-muted);
+
+    font-size: 11px;
+
+}
+
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+.candidate-contact {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 190px;
+
+}
+
+
+.candidate-contact span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--app-text-light);
+
+    font-size: 12px;
+
+}
+
+
+.candidate-contact i {
+
+    width: 14px;
+
+    color: var(--app-primary);
+
+    text-align: center;
+
+}
+
+
+/* ============================================================
+   MATCH SCORE
+   ============================================================ */
+
+.match-score {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 65px;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    color: #166534;
+
+    background: var(--app-success-bg);
+
+    border: 1px solid #bbf7d0;
+
+}
+
+
+.match-score strong {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.not-available {
+
+    color: var(--app-text-muted);
+
+    font-size: 12px;
+
+}
+
+
+/* ============================================================
+   APPLICATION STATUS
+   ============================================================ */
+
+.application-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 30px;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+}
+
+
+/* Applied */
+
+.status-applied {
+
+    color: #1d4ed8;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+}
+
+
+/* Under Review */
+
+.status-under-review {
+
+    color: #92400e;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+
+}
+
+
+/* Shortlisted */
+
+.status-shortlisted {
+
+    color: #6d28d9;
+
+    background: #f5f3ff;
+
+    border: 1px solid #ddd6fe;
+
+}
+
+
+/* Interview Scheduled */
+
+.status-interview-scheduled {
+
+    color: #0e7490;
+
+    background: #ecfeff;
+
+    border: 1px solid #a5f3fc;
+
+}
+
+
+/* Selected */
+
+.status-selected {
+
+    color: #166534;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+}
+
+
+/* Rejected */
+
+.status-rejected {
+
+    color: #991b1b;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+}
+
+
+/* Withdrawn */
+
+.status-withdrawn {
+
+    color: #475569;
+
+    background: #f1f5f9;
+
+    border: 1px solid #cbd5e1;
+
+}
+
+
+/* ============================================================
+   VIEW BUTTON
+   ============================================================ */
+
+.view-applicant-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 34px;
+
+    padding: 0 12px;
+
+    border-radius: 8px;
+
+    color: var(--app-primary);
+
+    background: var(--app-primary-light);
+
+    border: 1px solid #dbeafe;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--app-transition),
+        background var(--app-transition),
+        border-color var(--app-transition),
+        transform var(--app-transition);
+
+}
+
+
+.view-applicant-btn:hover {
+
+    color: #ffffff;
+
+    background: var(--app-primary);
+
+    border-color: var(--app-primary);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.applicants-empty {
+
+    padding: 75px 25px;
+
+    text-align: center;
+
+}
+
+
+.empty-icon {
+
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--app-primary);
+
+    background: var(--app-primary-light);
+
+    font-size: 27px;
+
+}
+
+
+.applicants-empty h3 {
+
+    margin: 0;
+
+    color: var(--app-text);
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+}
+
+
+.applicants-empty p {
+
+    max-width: 430px;
+
+    margin: 8px auto 0;
+
+    color: var(--app-text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ============================================================
+   RESPONSIVE - 1200px
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .employer-applicants-page {
+
+        padding: 25px;
+
+    }
+
+
+    .applicants-page-header {
+
+        padding: 25px;
+
+    }
+
+
+    .applicants-table {
+
+        min-width: 900px;
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE - 992px
+   ============================================================ */
+
+@media (max-width: 992px) {
+
+    .employer-applicants-page {
+
+        padding: 22px;
+
+    }
+
+
+    .applicants-page-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .applicants-job-card {
+
+        align-items: flex-start;
+
+    }
+
+
+    .job-card-count {
+
+        min-width: 90px;
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE - 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .employer-applicants-page {
+
+        padding: 18px;
+
+    }
+
+
+    .applicants-page-header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 22px;
+
+    }
+
+
+    .applicants-header-content {
+
+        align-items: flex-start;
+
+    }
+
+
+    .applicants-header-icon {
+
+        width: 52px;
+        height: 52px;
+
+        min-width: 52px;
+
+        border-radius: 13px;
+
+        font-size: 20px;
+
+    }
+
+
+    .applicants-page-header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .applicants-page-header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .applicants-back-btn {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+
+    .applicants-job-card {
+
+        flex-wrap: wrap;
+
+        padding: 18px;
+
+    }
+
+
+    .job-card-content {
+
+        width: calc(100% - 76px);
+
+    }
+
+
+    .job-card-count {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        padding: 12px;
+
+    }
+
+
+    .job-card-count strong {
+
+        font-size: 20px;
+
+    }
+
+
+    .job-card-count span {
+
+        margin-top: 0;
+
+    }
+
+
+    .applicants-card-header {
+
+        padding: 20px;
+
+    }
+
+
+    .applicants-table {
+
+        min-width: 850px;
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE - 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .employer-applicants-page {
+
+        padding: 14px;
+
+    }
+
+
+    .applicants-page-header {
+
+        padding: 18px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .applicants-header-content {
+
+        gap: 12px;
+
+    }
+
+
+    .applicants-header-icon {
+
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+
+        font-size: 18px;
+
+    }
+
+
+    .applicants-page-label {
+
+        font-size: 10px;
+
+    }
+
+
+    .applicants-page-header h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .applicants-page-header p {
+
+        font-size: 12px;
+
+    }
+
+
+    .applicants-job-card {
+
+        gap: 12px;
+
+        padding: 15px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .job-card-icon {
+
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+
+        border-radius: 12px;
+
+        font-size: 18px;
+
+    }
+
+
+    .job-card-content {
+
+        width: calc(100% - 60px);
+
+    }
+
+
+    .job-card-content h2 {
+
+        font-size: 16px;
+
+    }
+
+
+    .job-card-meta {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+
+    }
+
+
+    .applicants-card {
+
+        border-radius: 14px;
+
+    }
+
+
+    .applicants-card-header {
+
+        padding: 17px;
+
+    }
+
+
+    .applicants-card-header h2 {
+
+        font-size: 17px;
+
+    }
+
+
+    .applicants-card-header p {
+
+        font-size: 12px;
+
+    }
+
+
+    .applicants-empty {
+
+        padding: 55px 18px;
+
+    }
+
+
+    .empty-icon {
+
+        width: 65px;
+        height: 65px;
+
+        font-size: 23px;
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE - 320px
+   ============================================================ */
+
+@media (max-width: 320px) {
+
+    .employer-applicants-page {
+
+        padding: 10px;
+
+    }
+
+
+    .applicants-page-header {
+
+        padding: 15px;
+
+    }
+
+
+    .applicants-header-icon {
+
+        width: 40px;
+        height: 40px;
+
+        min-width: 40px;
+
+        font-size: 16px;
+
+    }
+
+
+    .applicants-page-header h1 {
+
+        font-size: 20px;
+
+    }
+
+
+    .job-card-content h2 {
+
+        font-size: 15px;
+
+    }
+
+
+    .job-card-meta span {
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+.applicants-back-btn:focus-visible,
+.view-applicant-btn:focus-visible {
+
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+
+    outline-offset: 2px;
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .applicants-page-header *,
+    .applicants-job-card,
+    .view-applicant-btn,
+    .applicants-back-btn,
+    .applicants-table tbody tr {
+
+        transition: none !important;
+
+    }
+
+}

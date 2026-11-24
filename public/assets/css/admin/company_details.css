@@ -1,0 +1,807 @@
+/* ==========================================================
+   Online Job Portal System
+   Admin — Company Details
+   File: assets/css/admin/company_details.css
+   ========================================================== */
+
+/* ==========================================================
+   1. WRAPPER
+========================================================== */
+
+.admin-company-details {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--admin-text, #0f172a);
+}
+
+.admin-company-details .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    color: var(--admin-text-light, #475569);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 550;
+    transition: var(--admin-transition, all 0.25s ease);
+}
+
+.admin-company-details .back-link:hover {
+    color: var(--admin-primary, #2563eb);
+    border-color: var(--admin-primary, #2563eb);
+    transform: translateX(-2px);
+}
+
+/* ==========================================================
+   2. HEADER CARD
+========================================================== */
+
+.company-header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px;
+    margin-bottom: 22px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius-lg, 18px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+    flex-wrap: wrap;
+}
+
+.company-header-main {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1;
+    min-width: 0;
+}
+
+.company-header-logo {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    border-radius: 18px;
+    background: #f8fafc;
+    border: 1px solid var(--admin-border, #e2e8f0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.company-header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-header-logo .logo-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 34px;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    color: var(--admin-primary, #2563eb);
+}
+
+.company-header-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.company-header-info h1 {
+    margin: 0 0 10px;
+    color: var(--admin-dark, #0f172a);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+.company-header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.company-header-meta .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--admin-text-light, #475569);
+    font-size: 13px;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.company-header-meta .meta-item i {
+    color: var(--admin-primary, #2563eb);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+a.meta-item:hover { color: var(--admin-primary, #2563eb); }
+
+.company-header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: #f1f5f9;
+    color: var(--admin-text-light, #475569);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tag-badge i { font-size: 10px; color: #94a3b8; }
+
+.company-header-id {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 24px;
+    border-left: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.company-header-id span {
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.company-header-id strong {
+    margin-top: 4px;
+    color: var(--admin-dark, #0f172a);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   3. GRID
+========================================================== */
+
+.admin-company-details .details-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.admin-company-details .details-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.admin-company-details .details-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+    position: sticky;
+    top: 20px;
+}
+
+/* ==========================================================
+   4. CARDS
+========================================================== */
+
+.admin-company-details .details-card {
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+    overflow: hidden;
+}
+
+.admin-company-details .details-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.admin-company-details .details-card-header h2 {
+    margin: 0;
+    color: var(--admin-dark, #0f172a);
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.muted-hint {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* ==========================================================
+   5. INFO LIST (reused from user_details)
+========================================================== */
+
+.admin-company-details .info-list {
+    margin: 0;
+    padding: 6px 22px;
+    list-style: none;
+}
+
+.admin-company-details .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.admin-company-details .info-row:last-child { border-bottom: none; }
+
+.admin-company-details .info-row dt {
+    color: var(--admin-text-muted, #64748b);
+    font-size: 12px;
+    font-weight: 550;
+    flex-shrink: 0;
+    min-width: 130px;
+}
+
+.admin-company-details .info-row dd {
+    margin: 0;
+    color: var(--admin-text, #0f172a);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: right;
+    word-break: break-word;
+    min-width: 0;
+}
+
+.admin-company-details .info-row dd a {
+    color: var(--admin-primary, #2563eb);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.admin-company-details .info-row dd a:hover { text-decoration: underline; }
+
+.admin-company-details .muted-value {
+    color: #94a3b8;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ==========================================================
+   6. DESCRIPTION
+========================================================== */
+
+.company-description {
+    padding: 18px 22px 22px;
+    border-top: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.company-description h3 {
+    margin: 0 0 10px;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.company-description p {
+    margin: 0;
+    color: var(--admin-text-light, #475569);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ==========================================================
+   7. OWNER CARD
+========================================================== */
+
+.owner-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+}
+
+.owner-avatar {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    color: var(--admin-primary, #2563eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.owner-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.owner-name {
+    color: var(--admin-dark, #0f172a);
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.owner-name:hover { color: var(--admin-primary, #2563eb); }
+
+.owner-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 12px;
+    word-break: break-word;
+}
+
+.owner-contact i {
+    color: #94a3b8;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.owner-status { flex-shrink: 0; }
+
+/* ==========================================================
+   8. STAT MINI GRID
+========================================================== */
+
+.stat-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--admin-border-light, #f1f5f9);
+}
+
+.stat-mini {
+    padding: 20px 18px;
+    background: var(--admin-white, #fff);
+    text-align: center;
+}
+
+.stat-mini strong {
+    display: block;
+    color: var(--admin-primary, #2563eb);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-mini span {
+    display: block;
+    margin-top: 4px;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+    font-weight: 550;
+}
+
+/* ==========================================================
+   9. ACTION LIST
+========================================================== */
+
+.admin-company-details .action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 18px 20px;
+}
+
+.admin-company-details .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    color: var(--admin-text, #0f172a);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 550;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--admin-transition, all 0.25s ease);
+    width: 100%;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.admin-company-details .action-btn i {
+    flex-shrink: 0;
+    width: 18px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.admin-company-details .action-btn:hover {
+    transform: translateX(3px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+}
+
+.action-btn-success i { color: #16a34a; }
+.action-btn-success:hover { border-color: #16a34a; background: #f0fdf4; }
+
+.action-btn-danger i { color: #dc2626; }
+.action-btn-danger:hover { border-color: #dc2626; background: #fef2f2; }
+
+.action-btn-warning i { color: #d97706; }
+.action-btn-warning:hover { border-color: #d97706; background: #fffbeb; }
+
+.action-btn-primary i { color: var(--admin-primary, #2563eb); }
+.action-btn-primary:hover { border-color: var(--admin-primary, #2563eb); background: #eff6ff; }
+
+.action-btn-light i { color: #475569; }
+.action-btn-light:hover { border-color: #94a3b8; background: #f8fafc; }
+
+/* ==========================================================
+   10. EMPTY STATE
+========================================================== */
+
+.admin-company-details .empty-state {
+    padding: 40px 22px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.admin-company-details .empty-state i {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #cbd5e1;
+}
+
+.admin-company-details .empty-state p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* ==========================================================
+   11. MINI JOBS TABLE
+========================================================== */
+
+.jobs-mini-table {
+    min-width: 0;
+}
+
+.jobs-mini-table th,
+.jobs-mini-table td {
+    padding: 12px 22px;
+    font-size: 12px;
+}
+
+/* ==========================================================
+   12. CONFIRM MODAL (shared styles)
+========================================================== */
+
+.admin-company-details .confirm-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.admin-company-details .confirm-modal[hidden] { display: none; }
+
+.admin-company-details .confirm-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(3px);
+    animation: confirmFade 0.2s ease;
+}
+
+.admin-company-details .confirm-modal-body {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    padding: 28px;
+    border-radius: 16px;
+    background: var(--admin-white, #fff);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.30);
+    animation: confirmRise 0.22s ease;
+    box-sizing: border-box;
+}
+
+.admin-company-details .confirm-modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #dc2626;
+    font-size: 24px;
+}
+
+.admin-company-details .confirm-modal-icon-danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.admin-company-details .confirm-modal-body h2 {
+    margin: 0 0 12px;
+    color: var(--admin-dark, #0f172a);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.admin-company-details .confirm-modal-body p {
+    margin: 0 0 20px;
+    color: var(--admin-text-light, #475569);
+    font-size: 13px;
+    line-height: 1.65;
+    text-align: center;
+}
+
+.confirm-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 12px;
+    font-weight: 550;
+}
+
+.confirm-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: 9px;
+    background: var(--admin-white, #fff);
+    color: var(--admin-text, #0f172a);
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.6;
+    outline: none;
+    resize: vertical;
+    transition: var(--admin-transition, all 0.25s ease);
+    box-sizing: border-box;
+    min-height: 100px;
+}
+
+.confirm-textarea:focus {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.confirm-char-count {
+    margin-top: 6px;
+    text-align: right;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.confirm-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.confirm-modal-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 42px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--admin-transition, all 0.25s ease);
+}
+
+.confirm-modal-actions .btn-light {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: var(--admin-text-light, #475569);
+}
+
+.confirm-modal-actions .btn-light:hover { background: #e2e8f0; }
+
+.confirm-modal-actions .btn-danger {
+    background: #dc2626;
+    color: #fff;
+}
+
+.confirm-modal-actions .btn-danger:hover:not(:disabled) {
+    background: #b91c1c;
+}
+
+.confirm-modal-actions .btn-danger:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+@keyframes confirmFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes confirmRise {
+    from { transform: translateY(12px); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ==========================================================
+   13. RESPONSIVE
+========================================================== */
+
+@media (max-width: 992px) {
+    .admin-company-details { padding: 22px; }
+    .admin-company-details .details-grid { grid-template-columns: 1fr; }
+    .admin-company-details .details-side  { position: static; }
+}
+
+@media (max-width: 768px) {
+    .admin-company-details { padding: 20px 16px; }
+
+    .company-header-card {
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .company-header-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .company-header-meta,
+    .company-header-badges { justify-content: center; }
+
+    .company-header-id {
+        align-items: center;
+        padding: 14px 0 0;
+        border-left: none;
+        border-top: 1px solid var(--admin-border-light, #f1f5f9);
+    }
+
+    .admin-company-details .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .admin-company-details .info-row dd { text-align: left; }
+}
+
+@media (max-width: 480px) {
+    .admin-company-details { padding: 16px 12px; }
+    .company-header-info h1 { font-size: 20px; }
+    .company-header-logo { width: 76px; height: 76px; }
+    .stat-mini-grid { grid-template-columns: 1fr; }
+    .owner-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .owner-status { align-self: flex-start; }
+    .admin-company-details .confirm-modal-body { padding: 22px 18px; }
+}
+
+/* ==========================================================
+   14. DARK MODE
+========================================================== */
+
+body.dark-mode .admin-company-details { color: #e2e8f0; }
+
+body.dark-mode .admin-company-details .back-link,
+body.dark-mode .company-header-card,
+body.dark-mode .admin-company-details .details-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .company-header-logo {
+    background: #172033;
+    border-color: #334155;
+}
+
+body.dark-mode .company-header-info h1,
+body.dark-mode .company-header-id strong,
+body.dark-mode .admin-company-details .details-card-header h2,
+body.dark-mode .admin-company-details .info-row dd,
+body.dark-mode .owner-name,
+body.dark-mode .stat-mini strong {
+    color: #f8fafc;
+}
+
+body.dark-mode .admin-company-details .details-card-header,
+body.dark-mode .admin-company-details .info-row,
+body.dark-mode .stat-mini-grid,
+body.dark-mode .stat-mini,
+body.dark-mode .company-description {
+    border-color: #334155;
+    background: #1e293b;
+}
+
+body.dark-mode .stat-mini { background: #1e293b; }
+
+body.dark-mode .company-header-meta .meta-item,
+body.dark-mode .admin-company-details .info-row dt,
+body.dark-mode .muted-hint,
+body.dark-mode .stat-mini span,
+body.dark-mode .company-description p,
+body.dark-mode .owner-contact {
+    color: #94a3b8;
+}
+
+body.dark-mode .tag-badge {
+    background: #172033;
+    color: #cbd5e1;
+}
+
+body.dark-mode .admin-company-details .action-btn {
+    background: #172033;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .confirm-textarea {
+    background: #172033;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .admin-company-details .confirm-modal-body {
+    background: #1e293b;
+}
+
+/* ==========================================================
+   15. REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-company-details .back-link,
+    .admin-company-details .action-btn,
+    .admin-company-details .confirm-modal-overlay,
+    .admin-company-details .confirm-modal-body {
+        transition: none;
+        animation: none;
+    }
+    .admin-company-details .action-btn:hover { transform: none; }
+}

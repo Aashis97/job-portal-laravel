@@ -1,0 +1,131 @@
+.employer-ai-ranking-page {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 26px 30px 40px;
+    color: #1e293b;
+}
+
+.ai-ranking-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.ai-ranking-header-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(37, 99, 235, .1);
+    color: #2563eb;
+    font-size: 19px;
+}
+
+.ai-ranking-header span {
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ai-ranking-header h1 {
+    margin: 4px 0 0;
+    color: #0f172a;
+    font-size: 24px;
+}
+
+.ai-ranking-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.ai-ranking-job-list {
+    display: grid;
+    gap: 12px;
+}
+
+.ai-ranking-job {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.ai-ranking-job-status {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ai-ranking-job h2 {
+    margin: 5px 0 0;
+    color: #0f172a;
+    font-size: 15px;
+}
+
+.ai-ranking-job p,
+.ai-ranking-no-candidates {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.ai-ranking-job button,
+.ai-ranking-empty a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ai-ranking-job button:hover,
+.ai-ranking-empty a:hover { background: #1d4ed8; }
+
+.ai-ranking-empty {
+    padding: 50px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+}
+
+.ai-ranking-empty > i { color: #64748b; font-size: 26px; }
+.ai-ranking-empty h2 { margin: 12px 0 5px; color: #0f172a; font-size: 17px; }
+.ai-ranking-empty p { margin: 0; color: #64748b; font-size: 13px; }
+.ai-ranking-empty a { margin-top: 16px; }
+
+body.dark-mode .ai-ranking-job,
+body.dark-mode .ai-ranking-empty { border-color: #334155; background: #1e293b; }
+body.dark-mode .ai-ranking-header h1,
+body.dark-mode .ai-ranking-job h2,
+body.dark-mode .ai-ranking-empty h2 { color: #f8fafc; }
+body.dark-mode .ai-ranking-header p,
+body.dark-mode .ai-ranking-job p,
+body.dark-mode .ai-ranking-no-candidates,
+body.dark-mode .ai-ranking-empty p { color: #94a3b8; }
+
+@media (max-width: 640px) {
+    .employer-ai-ranking-page { padding: 22px 16px 30px; }
+    .ai-ranking-job { align-items: flex-start; flex-direction: column; }
+}

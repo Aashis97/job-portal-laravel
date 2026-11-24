@@ -1,0 +1,1944 @@
+﻿/* ==========================================================
+Online Job Portal System
+Employer Panel - Candidate Comparison
+File: assets/css/employer/candidate-comparison.css
+========================================================== */
+
+/* ==========================================================
+Root Variables
+========================================================== */
+
+:root {
+--comparison-primary: #2563eb;
+--comparison-primary-dark: #1d4ed8;
+--comparison-primary-light: #eff6ff;
+
+--comparison-secondary: #1e3a8a;
+
+--comparison-success: #16a34a;
+--comparison-success-light: #f0fdf4;
+
+--comparison-warning: #f59e0b;
+--comparison-warning-light: #fffbeb;
+
+--comparison-danger: #dc2626;
+--comparison-danger-light: #fef2f2;
+
+--comparison-info: #0891b2;
+--comparison-info-light: #ecfeff;
+
+--comparison-purple: #7c3aed;
+--comparison-purple-light: #f5f3ff;
+
+--comparison-dark: #0f172a;
+--comparison-dark-light: #1e293b;
+
+--comparison-text: #1e293b;
+--comparison-text-light: #64748b;
+--comparison-text-muted: #94a3b8;
+
+--comparison-border: #e2e8f0;
+--comparison-border-light: #f1f5f9;
+
+--comparison-background: #f8fafc;
+--comparison-white: #ffffff;
+
+--comparison-shadow-sm:
+    0 1px 3px rgba(15, 23, 42, 0.08);
+
+--comparison-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.08);
+
+--comparison-shadow-lg:
+    0 20px 50px rgba(15, 23, 42, 0.12);
+
+--comparison-radius-sm: 8px;
+--comparison-radius: 14px;
+--comparison-radius-lg: 20px;
+
+--comparison-transition:
+    all 0.25s ease;
+
+}
+
+/* ==========================================================
+Page Wrapper
+========================================================== */
+
+.candidate-comparison-page {
+width: 100%;
+max-width: 1600px;
+margin: 0 auto;
+padding: 24px;
+}
+
+/* ==========================================================
+Page Header
+========================================================== */
+
+.comparison-page-header {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 24px;
+
+margin-bottom: 28px;
+
+}
+
+.comparison-header-content {
+min-width: 0;
+}
+
+.comparison-breadcrumb {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 8px;
+
+margin-bottom: 10px;
+
+font-size: 13px;
+color: var(--comparison-text-light);
+
+}
+
+.comparison-breadcrumb a {
+color: var(--comparison-primary);
+text-decoration: none;
+transition: var(--comparison-transition);
+}
+
+.comparison-breadcrumb a:hover {
+color: var(--comparison-primary-dark);
+}
+
+.comparison-breadcrumb i {
+font-size: 10px;
+color: var(--comparison-text-muted);
+}
+
+.comparison-page-header h1 {
+margin: 0 0 8px;
+
+color: var(--comparison-dark);
+
+font-size: clamp(24px, 3vw, 34px);
+font-weight: 700;
+line-height: 1.2;
+
+}
+
+.comparison-page-header p {
+max-width: 800px;
+
+margin: 0;
+
+color: var(--comparison-text-light);
+
+font-size: 14px;
+line-height: 1.7;
+
+}
+
+/* ==========================================================
+Header Actions
+========================================================== */
+
+.comparison-header-actions {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.comparison-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+
+min-height: 42px;
+padding: 0 16px;
+
+border: 1px solid transparent;
+border-radius: var(--comparison-radius-sm);
+
+font-family: inherit;
+font-size: 13px;
+font-weight: 600;
+
+text-decoration: none;
+cursor: pointer;
+
+transition: var(--comparison-transition);
+
+}
+
+.comparison-btn-primary {
+color: #ffffff;
+background: linear-gradient(
+135deg,
+var(--comparison-primary),
+var(--comparison-secondary)
+);
+
+box-shadow:
+    0 6px 18px rgba(37, 99, 235, 0.22);
+
+}
+
+.comparison-btn-primary:hover {
+color: #ffffff;
+
+transform: translateY(-1px);
+
+box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.28);
+
+}
+
+.comparison-btn-secondary {
+color: var(--comparison-text);
+background: var(--comparison-white);
+border-color: var(--comparison-border);
+}
+
+.comparison-btn-secondary:hover {
+color: var(--comparison-primary);
+border-color: #bfdbfe;
+background: var(--comparison-primary-light);
+}
+
+/* ==========================================================
+Job Information Card
+========================================================== */
+
+.comparison-job-card {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+
+padding: 20px 22px;
+margin-bottom: 24px;
+
+background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #f8fbff
+    );
+
+border: 1px solid var(--comparison-border);
+border-radius: var(--comparison-radius);
+
+box-shadow: var(--comparison-shadow-sm);
+
+}
+
+.comparison-job-info {
+display: flex;
+align-items: center;
+gap: 15px;
+
+min-width: 0;
+
+}
+
+.comparison-job-icon {
+flex: 0 0 48px;
+
+width: 48px;
+height: 48px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: #ffffff;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--comparison-primary),
+        var(--comparison-secondary)
+    );
+
+border-radius: 12px;
+
+box-shadow:
+    0 8px 18px rgba(37, 99, 235, 0.22);
+
+}
+
+.comparison-job-icon i {
+font-size: 20px;
+}
+
+.comparison-job-content {
+min-width: 0;
+}
+
+.comparison-job-content h2 {
+margin: 0 0 5px;
+
+overflow: hidden;
+
+color: var(--comparison-dark);
+
+font-size: 17px;
+font-weight: 700;
+
+text-overflow: ellipsis;
+white-space: nowrap;
+
+}
+
+.comparison-job-content p {
+margin: 0;
+
+color: var(--comparison-text-light);
+
+font-size: 13px;
+
+}
+
+.comparison-job-meta {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.comparison-meta-badge {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+
+padding: 6px 10px;
+
+color: var(--comparison-text-light);
+background: var(--comparison-background);
+
+border: 1px solid var(--comparison-border);
+border-radius: 999px;
+
+font-size: 12px;
+font-weight: 600;
+
+}
+
+/* ==========================================================
+Summary / KPI Cards
+========================================================== */
+
+.comparison-summary-grid {
+display: grid;
+grid-template-columns:
+repeat(4, minmax(0, 1fr));
+
+gap: 16px;
+
+margin-bottom: 24px;
+
+}
+
+.comparison-summary-card {
+position: relative;
+
+padding: 20px;
+
+background: var(--comparison-white);
+
+border: 1px solid var(--comparison-border);
+border-radius: var(--comparison-radius);
+
+box-shadow: var(--comparison-shadow-sm);
+
+overflow: hidden;
+
+transition: var(--comparison-transition);
+
+}
+
+.comparison-summary-card::before {
+content: "";
+
+position: absolute;
+
+top: 0;
+left: 0;
+
+width: 100%;
+height: 3px;
+
+background:
+    linear-gradient(
+        90deg,
+        var(--comparison-primary),
+        var(--comparison-secondary)
+    );
+
+}
+
+.comparison-summary-card:hover {
+transform: translateY(-2px);
+box-shadow: var(--comparison-shadow);
+}
+
+.comparison-summary-top {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+margin-bottom: 12px;
+
+}
+
+.comparison-summary-icon {
+width: 42px;
+height: 42px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: var(--comparison-primary);
+background: var(--comparison-primary-light);
+
+border-radius: 11px;
+
+}
+
+.comparison-summary-label {
+color: var(--comparison-text-light);
+
+font-size: 12px;
+font-weight: 600;
+
+text-transform: uppercase;
+letter-spacing: 0.05em;
+
+}
+
+.comparison-summary-value {
+margin: 0;
+
+color: var(--comparison-dark);
+
+font-size: 25px;
+font-weight: 750;
+line-height: 1.1;
+
+}
+
+/* ==========================================================
+Comparison Section
+========================================================== */
+
+.comparison-section {
+margin-bottom: 28px;
+}
+
+.comparison-section-header {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+gap: 20px;
+
+margin-bottom: 15px;
+
+}
+
+.comparison-section-title {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.comparison-section-title-icon {
+width: 36px;
+height: 36px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: var(--comparison-primary);
+background: var(--comparison-primary-light);
+
+border-radius: 9px;
+
+}
+
+.comparison-section-title h2 {
+margin: 0;
+
+color: var(--comparison-dark);
+
+font-size: 19px;
+font-weight: 700;
+
+}
+
+.comparison-section-title p {
+margin: 3px 0 0;
+
+color: var(--comparison-text-light);
+
+font-size: 12px;
+
+}
+
+/* ==========================================================
+Comparison Table Wrapper
+========================================================== */
+
+.comparison-table-wrapper {
+width: 100%;
+
+overflow-x: auto;
+
+background: var(--comparison-white);
+
+border: 1px solid var(--comparison-border);
+border-radius: var(--comparison-radius-lg);
+
+box-shadow: var(--comparison-shadow);
+
+scrollbar-width: thin;
+
+}
+
+.comparison-table-wrapper::-webkit-scrollbar {
+height: 8px;
+}
+
+.comparison-table-wrapper::-webkit-scrollbar-track {
+background: var(--comparison-background);
+}
+
+.comparison-table-wrapper::-webkit-scrollbar-thumb {
+background: #cbd5e1;
+border-radius: 20px;
+}
+
+/* ==========================================================
+Comparison Table
+========================================================== */
+
+.comparison-table {
+width: 100%;
+
+min-width: 1050px;
+
+border-collapse: separate;
+border-spacing: 0;
+
+font-size: 13px;
+
+}
+
+.comparison-table th,
+.comparison-table td {
+padding: 15px;
+
+border-right: 1px solid var(--comparison-border);
+border-bottom: 1px solid var(--comparison-border);
+
+vertical-align: middle;
+
+}
+
+.comparison-table th:last-child,
+.comparison-table td:last-child {
+border-right: none;
+}
+
+.comparison-table tr:last-child td {
+border-bottom: none;
+}
+
+/* ==========================================================
+Table Header
+========================================================== */
+
+.comparison-table thead th {
+position: sticky;
+top: 0;
+z-index: 2;
+
+color: #ffffff;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--comparison-dark),
+        var(--comparison-secondary)
+    );
+
+text-align: left;
+font-size: 12px;
+font-weight: 700;
+
+}
+
+.comparison-table thead th:first-child {
+width: 220px;
+
+border-top-left-radius: var(--comparison-radius);
+
+}
+
+.comparison-table thead th:last-child {
+border-top-right-radius: var(--comparison-radius);
+}
+
+.comparison-table tbody tr {
+transition: background 0.2s ease;
+}
+
+.comparison-table tbody tr:hover {
+background: #f8fbff;
+}
+
+/* ==========================================================
+Comparison Attribute Column
+========================================================== */
+
+.comparison-attribute {
+width: 220px;
+
+color: var(--comparison-dark);
+
+background: #f8fafc;
+
+font-weight: 700;
+
+}
+
+.comparison-attribute small {
+display: block;
+
+margin-top: 3px;
+
+color: var(--comparison-text-muted);
+
+font-size: 11px;
+font-weight: 500;
+
+}
+
+/* ==========================================================
+Candidate Header
+========================================================== */
+
+.comparison-candidate-header {
+position: relative;
+
+min-width: 245px;
+
+}
+
+.comparison-candidate-top {
+display: flex;
+align-items: center;
+gap: 11px;
+}
+
+.comparison-candidate-avatar {
+flex: 0 0 44px;
+
+width: 44px;
+height: 44px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+overflow: hidden;
+
+color: var(--comparison-primary);
+
+background: #dbeafe;
+
+border-radius: 50%;
+
+font-size: 15px;
+font-weight: 700;
+
+}
+
+.comparison-candidate-avatar img {
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+
+}
+
+.comparison-candidate-info {
+min-width: 0;
+}
+
+.comparison-candidate-name {
+display: block;
+
+overflow: hidden;
+
+color: #ffffff;
+
+font-size: 14px;
+font-weight: 700;
+
+text-overflow: ellipsis;
+white-space: nowrap;
+
+}
+
+.comparison-candidate-email {
+display: block;
+
+max-width: 180px;
+
+overflow: hidden;
+
+margin-top: 3px;
+
+color: rgba(255, 255, 255, 0.68);
+
+font-size: 11px;
+
+text-overflow: ellipsis;
+white-space: nowrap;
+
+}
+
+/* ==========================================================
+Top Candidate
+========================================================== */
+
+.comparison-top-candidate {
+position: absolute;
+
+top: -10px;
+right: 10px;
+
+display: inline-flex;
+align-items: center;
+gap: 5px;
+
+padding: 5px 8px;
+
+color: #854d0e;
+background: #fef3c7;
+
+border: 1px solid #fde68a;
+border-radius: 999px;
+
+font-size: 10px;
+font-weight: 700;
+
+}
+
+.comparison-top-candidate i {
+font-size: 9px;
+}
+
+/* ==========================================================
+Score Cell
+========================================================== */
+
+.comparison-score-cell {
+text-align: center;
+}
+
+.comparison-score {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+min-width: 74px;
+min-height: 38px;
+
+padding: 7px 11px;
+
+color: var(--comparison-primary);
+
+background: var(--comparison-primary-light);
+
+border: 1px solid #bfdbfe;
+border-radius: 9px;
+
+font-size: 15px;
+font-weight: 800;
+
+}
+
+.comparison-score.excellent {
+color: #166534;
+background: var(--comparison-success-light);
+border-color: #bbf7d0;
+}
+
+.comparison-score.strong {
+color: #166534;
+background: #f0fdf4;
+border-color: #bbf7d0;
+}
+
+.comparison-score.good {
+color: #1d4ed8;
+background: #eff6ff;
+border-color: #bfdbfe;
+}
+
+.comparison-score.moderate {
+color: #92400e;
+background: var(--comparison-warning-light);
+border-color: #fde68a;
+}
+
+.comparison-score.low {
+color: #991b1b;
+background: var(--comparison-danger-light);
+border-color: #fecaca;
+}
+
+/* ==========================================================
+Score Progress
+========================================================== */
+
+.comparison-progress {
+width: 100%;
+max-width: 150px;
+height: 7px;
+
+margin: 7px auto 0;
+
+overflow: hidden;
+
+background: #e2e8f0;
+
+border-radius: 999px;
+
+}
+
+.comparison-progress-bar {
+height: 100%;
+
+background:
+    linear-gradient(
+        90deg,
+        var(--comparison-primary),
+        #60a5fa
+    );
+
+border-radius: inherit;
+
+transition: width 0.6s ease;
+
+}
+
+/* ==========================================================
+Recommendation Badge
+========================================================== */
+
+.comparison-recommendation {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
+
+padding: 6px 10px;
+
+border-radius: 999px;
+
+font-size: 11px;
+font-weight: 700;
+
+}
+
+.comparison-recommendation.excellent {
+color: #166534;
+background: #dcfce7;
+}
+
+.comparison-recommendation.strong {
+color: #166534;
+background: #dcfce7;
+}
+
+.comparison-recommendation.good {
+color: #1d4ed8;
+background: #dbeafe;
+}
+
+.comparison-recommendation.moderate {
+color: #92400e;
+background: #fef3c7;
+}
+
+.comparison-recommendation.low {
+color: #991b1b;
+background: #fee2e2;
+}
+
+/* ==========================================================
+Status Badge
+========================================================== */
+
+.comparison-status {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+
+padding: 6px 10px;
+
+border-radius: 999px;
+
+color: var(--comparison-text);
+
+background: #f1f5f9;
+
+font-size: 11px;
+font-weight: 650;
+
+}
+
+.comparison-status.applied {
+color: #1d4ed8;
+background: #dbeafe;
+}
+
+.comparison-status.review {
+color: #92400e;
+background: #fef3c7;
+}
+
+.comparison-status.shortlisted {
+color: #166534;
+background: #dcfce7;
+}
+
+.comparison-status.interview {
+color: #6d28d9;
+background: #ede9fe;
+}
+
+.comparison-status.selected {
+color: #166534;
+background: #bbf7d0;
+}
+
+.comparison-status.rejected,
+.comparison-status.withdrawn {
+color: #991b1b;
+background: #fee2e2;
+}
+
+/* ==========================================================
+Availability
+========================================================== */
+
+.comparison-availability {
+display: flex;
+align-items: center;
+gap: 7px;
+
+color: var(--comparison-text-light);
+
+font-size: 12px;
+
+}
+
+.comparison-availability i {
+color: var(--comparison-primary);
+}
+
+/* ==========================================================
+Skills Section
+========================================================== */
+
+.comparison-skills {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+
+max-width: 250px;
+
+}
+
+.comparison-skill {
+display: inline-flex;
+align-items: center;
+
+padding: 5px 8px;
+
+color: var(--comparison-text);
+
+background: #f1f5f9;
+
+border: 1px solid #e2e8f0;
+border-radius: 6px;
+
+font-size: 10px;
+font-weight: 600;
+
+}
+
+.comparison-skill.matched {
+color: #166534;
+background: #f0fdf4;
+border-color: #bbf7d0;
+}
+
+.comparison-skill.missing {
+color: #991b1b;
+background: #fef2f2;
+border-color: #fecaca;
+}
+
+.comparison-skill.additional {
+color: #6d28d9;
+background: #f5f3ff;
+border-color: #ddd6fe;
+}
+
+.comparison-no-skills {
+color: var(--comparison-text-muted);
+
+font-size: 12px;
+font-style: italic;
+
+}
+
+/* ==========================================================
+Candidate Actions
+========================================================== */
+
+.comparison-actions {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 7px;
+}
+
+.comparison-action-btn {
+width: 34px;
+height: 34px;
+
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+color: var(--comparison-text-light);
+background: var(--comparison-white);
+
+border: 1px solid var(--comparison-border);
+border-radius: 8px;
+
+text-decoration: none;
+
+transition: var(--comparison-transition);
+
+}
+
+.comparison-action-btn:hover {
+color: var(--comparison-primary);
+background: var(--comparison-primary-light);
+border-color: #bfdbfe;
+
+transform: translateY(-1px);
+
+}
+
+.comparison-action-btn.primary {
+color: var(--comparison-primary);
+background: var(--comparison-primary-light);
+border-color: #bfdbfe;
+}
+
+.comparison-action-btn.primary:hover {
+color: #ffffff;
+background: var(--comparison-primary);
+border-color: var(--comparison-primary);
+}
+
+/* ==========================================================
+Winner / Top Candidate Card
+========================================================== */
+
+.comparison-winner-card {
+position: relative;
+
+display: grid;
+grid-template-columns:
+    auto minmax(0, 1fr) auto;
+
+align-items: center;
+gap: 18px;
+
+padding: 22px;
+
+margin-bottom: 24px;
+
+background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+
+border: 1px solid #bfdbfe;
+border-radius: var(--comparison-radius-lg);
+
+box-shadow:
+    0 10px 35px rgba(37, 99, 235, 0.10);
+
+overflow: hidden;
+
+}
+
+.comparison-winner-card::before {
+content: "";
+
+position: absolute;
+
+top: 0;
+left: 0;
+
+width: 5px;
+height: 100%;
+
+background:
+    linear-gradient(
+        180deg,
+        var(--comparison-primary),
+        var(--comparison-secondary)
+    );
+
+}
+
+.comparison-winner-icon {
+width: 58px;
+height: 58px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: #ffffff;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--comparison-primary),
+        var(--comparison-secondary)
+    );
+
+border-radius: 15px;
+
+box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.24);
+
+}
+
+.comparison-winner-icon i {
+font-size: 24px;
+}
+
+.comparison-winner-content h3 {
+margin: 0 0 5px;
+
+color: var(--comparison-dark);
+
+font-size: 18px;
+font-weight: 750;
+
+}
+
+.comparison-winner-content p {
+margin: 0;
+
+color: var(--comparison-text-light);
+
+font-size: 13px;
+line-height: 1.6;
+
+}
+
+.comparison-winner-score {
+text-align: right;
+}
+
+.comparison-winner-score strong {
+display: block;
+
+color: var(--comparison-primary);
+
+font-size: 30px;
+font-weight: 800;
+line-height: 1;
+
+}
+
+.comparison-winner-score span {
+display: block;
+
+margin-top: 5px;
+
+color: var(--comparison-text-light);
+
+font-size: 11px;
+
+}
+
+/* ==========================================================
+Score Breakdown Cards
+========================================================== */
+
+.comparison-score-breakdown {
+display: grid;
+
+grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+gap: 12px;
+
+}
+
+.comparison-breakdown-card {
+padding: 15px;
+
+background: var(--comparison-white);
+
+border: 1px solid var(--comparison-border);
+border-radius: 12px;
+
+box-shadow: var(--comparison-shadow-sm);
+
+}
+
+.comparison-breakdown-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 8px;
+
+margin-bottom: 10px;
+
+}
+
+.comparison-breakdown-label {
+color: var(--comparison-text-light);
+
+font-size: 11px;
+font-weight: 600;
+
+}
+
+.comparison-breakdown-value {
+color: var(--comparison-dark);
+
+font-size: 15px;
+font-weight: 750;
+
+}
+
+.comparison-breakdown-bar {
+width: 100%;
+height: 6px;
+
+overflow: hidden;
+
+background: #e2e8f0;
+
+border-radius: 999px;
+
+}
+
+.comparison-breakdown-fill {
+height: 100%;
+
+background:
+    linear-gradient(
+        90deg,
+        var(--comparison-primary),
+        #60a5fa
+    );
+
+border-radius: inherit;
+
+}
+
+/* ==========================================================
+Skills Comparison Grid
+========================================================== */
+
+.comparison-skills-grid {
+display: grid;
+
+grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+gap: 16px;
+
+}
+
+.comparison-skill-panel {
+padding: 18px;
+
+background: var(--comparison-white);
+
+border: 1px solid var(--comparison-border);
+border-radius: var(--comparison-radius);
+
+box-shadow: var(--comparison-shadow-sm);
+
+}
+
+.comparison-skill-panel-header {
+display: flex;
+align-items: center;
+gap: 9px;
+
+margin-bottom: 14px;
+
+}
+
+.comparison-skill-panel-icon {
+width: 34px;
+height: 34px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 8px;
+
+}
+
+.comparison-skill-panel.matched .comparison-skill-panel-icon {
+color: var(--comparison-success);
+background: var(--comparison-success-light);
+}
+
+.comparison-skill-panel.missing .comparison-skill-panel-icon {
+color: var(--comparison-danger);
+background: var(--comparison-danger-light);
+}
+
+.comparison-skill-panel.additional .comparison-skill-panel-icon {
+color: var(--comparison-purple);
+background: var(--comparison-purple-light);
+}
+
+.comparison-skill-panel-header h3 {
+margin: 0;
+
+color: var(--comparison-dark);
+
+font-size: 14px;
+font-weight: 700;
+
+}
+
+.comparison-skill-panel-header span {
+margin-left: auto;
+
+color: var(--comparison-text-muted);
+
+font-size: 11px;
+font-weight: 600;
+
+}
+
+.comparison-skill-list {
+display: flex;
+flex-wrap: wrap;
+gap: 7px;
+}
+
+.comparison-skill-list .skill-tag {
+display: inline-flex;
+align-items: center;
+
+padding: 6px 9px;
+
+border-radius: 7px;
+
+font-size: 11px;
+font-weight: 600;
+
+}
+
+.comparison-skill-list .skill-tag.matched {
+color: #166534;
+background: #f0fdf4;
+border: 1px solid #bbf7d0;
+}
+
+.comparison-skill-list .skill-tag.missing {
+color: #991b1b;
+background: #fef2f2;
+border: 1px solid #fecaca;
+}
+
+.comparison-skill-list .skill-tag.additional {
+color: #6d28d9;
+background: #f5f3ff;
+border: 1px solid #ddd6fe;
+}
+
+/* ==========================================================
+Methodology / Disclaimer
+========================================================== */
+
+.comparison-methodology {
+display: grid;
+
+grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 360px);
+
+gap: 18px;
+
+padding: 22px;
+
+background: var(--comparison-white);
+
+border: 1px solid var(--comparison-border);
+border-radius: var(--comparison-radius-lg);
+
+box-shadow: var(--comparison-shadow-sm);
+
+}
+
+.comparison-methodology h3 {
+display: flex;
+align-items: center;
+gap: 8px;
+
+margin: 0 0 12px;
+
+color: var(--comparison-dark);
+
+font-size: 16px;
+
+}
+
+.comparison-methodology h3 i {
+color: var(--comparison-primary);
+}
+
+.comparison-methodology p {
+margin: 0;
+
+color: var(--comparison-text-light);
+
+font-size: 13px;
+line-height: 1.7;
+
+}
+
+.comparison-weight-list {
+display: grid;
+
+grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+gap: 8px;
+
+}
+
+.comparison-weight-item {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 12px;
+
+padding: 9px 11px;
+
+background: var(--comparison-background);
+
+border: 1px solid var(--comparison-border-light);
+border-radius: 8px;
+
+}
+
+.comparison-weight-item span {
+color: var(--comparison-text-light);
+
+font-size: 11px;
+
+}
+
+.comparison-weight-item strong {
+color: var(--comparison-primary);
+
+font-size: 12px;
+
+}
+
+.comparison-disclaimer {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+
+margin-top: 16px;
+padding: 13px 15px;
+
+color: #92400e;
+background: #fffbeb;
+
+border: 1px solid #fde68a;
+border-radius: 10px;
+
+font-size: 12px;
+line-height: 1.6;
+
+}
+
+.comparison-disclaimer i {
+flex: 0 0 auto;
+
+margin-top: 2px;
+
+}
+
+/* ==========================================================
+Empty State
+========================================================== */
+
+.comparison-empty {
+padding: 70px 30px;
+
+text-align: center;
+
+background: var(--comparison-white);
+
+border: 1px dashed var(--comparison-border);
+border-radius: var(--comparison-radius-lg);
+
+}
+
+.comparison-empty-icon {
+width: 64px;
+height: 64px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin: 0 auto 16px;
+
+color: var(--comparison-primary);
+
+background: var(--comparison-primary-light);
+
+border-radius: 18px;
+
+}
+
+.comparison-empty-icon i {
+font-size: 25px;
+}
+
+.comparison-empty h3 {
+margin: 0 0 7px;
+
+color: var(--comparison-dark);
+
+font-size: 18px;
+
+}
+
+.comparison-empty p {
+max-width: 500px;
+
+margin: 0 auto 18px;
+
+color: var(--comparison-text-light);
+
+font-size: 13px;
+line-height: 1.7;
+
+}
+
+/* ==========================================================
+Utility Classes
+========================================================== */
+
+.is-hidden {
+display: none !important;
+}
+
+.text-success {
+color: var(--comparison-success) !important;
+}
+
+.text-warning {
+color: var(--comparison-warning) !important;
+}
+
+.text-danger {
+color: var(--comparison-danger) !important;
+}
+
+.text-primary {
+color: var(--comparison-primary) !important;
+}
+
+/* ==========================================================
+Accessibility
+========================================================== */
+
+.comparison-btn:focus-visible,
+.comparison-action-btn:focus-visible,
+.comparison-table a:focus-visible {
+outline: 3px solid rgba(37, 99, 235, 0.25);
+outline-offset: 2px;
+}
+
+/* ==========================================================
+1440px
+========================================================== */
+
+@media (max-width: 1440px) {
+
+.candidate-comparison-page {
+    padding: 22px;
+}
+
+.comparison-score-breakdown {
+    grid-template-columns:
+        repeat(5, minmax(150px, 1fr));
+}
+
+}
+
+/* ==========================================================
+1200px
+========================================================== */
+
+@media (max-width: 1200px) {
+
+.comparison-summary-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+
+.comparison-score-breakdown {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+
+.comparison-skills-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+
+.comparison-methodology {
+    grid-template-columns:
+        1fr;
+}
+
+}
+
+/* ==========================================================
+992px
+========================================================== */
+
+@media (max-width: 992px) {
+
+.comparison-page-header {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+.comparison-header-actions {
+    justify-content: flex-start;
+}
+
+
+.comparison-job-card {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.comparison-job-meta {
+    width: 100%;
+}
+
+
+.comparison-winner-card {
+    grid-template-columns:
+        auto minmax(0, 1fr);
+}
+
+
+.comparison-winner-score {
+    grid-column: 1 / -1;
+
+    padding-top: 5px;
+
+    text-align: left;
+}
+
+
+.comparison-winner-score strong {
+    font-size: 26px;
+}
+
+}
+
+/* ==========================================================
+768px
+========================================================== */
+
+@media (max-width: 768px) {
+
+.candidate-comparison-page {
+    padding: 16px;
+}
+
+
+.comparison-page-header {
+    margin-bottom: 20px;
+}
+
+
+.comparison-page-header h1 {
+    font-size: 25px;
+}
+
+
+.comparison-header-actions {
+    width: 100%;
+}
+
+
+.comparison-btn {
+    flex: 1 1 auto;
+}
+
+
+.comparison-summary-grid {
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.comparison-summary-card {
+    padding: 16px;
+}
+
+
+.comparison-summary-value {
+    font-size: 21px;
+}
+
+
+.comparison-job-card {
+    padding: 16px;
+}
+
+
+.comparison-score-breakdown {
+    grid-template-columns:
+        1fr 1fr;
+}
+
+
+.comparison-skills-grid {
+    grid-template-columns:
+        1fr;
+}
+
+
+.comparison-methodology {
+    padding: 17px;
+}
+
+
+.comparison-weight-list {
+    grid-template-columns:
+        1fr;
+}
+
+
+.comparison-table {
+    min-width: 900px;
+}
+
+}
+
+/* ==========================================================
+480px
+========================================================== */
+
+@media (max-width: 480px) {
+
+.candidate-comparison-page {
+    padding: 12px;
+}
+
+
+.comparison-page-header h1 {
+    font-size: 22px;
+}
+
+
+.comparison-page-header p {
+    font-size: 12px;
+}
+
+
+.comparison-header-actions {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+.comparison-btn {
+    width: 100%;
+}
+
+
+.comparison-summary-grid {
+    grid-template-columns:
+        1fr;
+}
+
+
+.comparison-job-info {
+    align-items: flex-start;
+}
+
+
+.comparison-job-content h2 {
+    font-size: 15px;
+}
+
+
+.comparison-job-meta {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.comparison-winner-card {
+    grid-template-columns:
+        1fr;
+
+    padding: 18px;
+}
+
+
+.comparison-winner-icon {
+    width: 50px;
+    height: 50px;
+}
+
+
+.comparison-winner-score {
+    grid-column: auto;
+}
+
+
+.comparison-score-breakdown {
+    grid-template-columns:
+        1fr;
+}
+
+
+.comparison-section-title h2 {
+    font-size: 17px;
+}
+
+
+.comparison-disclaimer {
+    font-size: 11px;
+}
+
+}
+
+/* ==========================================================
+320px
+========================================================== */
+
+@media (max-width: 320px) {
+
+.candidate-comparison-page {
+    padding: 10px;
+}
+
+
+.comparison-page-header h1 {
+    font-size: 20px;
+}
+
+
+.comparison-summary-card {
+    padding: 14px;
+}
+
+
+.comparison-summary-icon {
+    width: 36px;
+    height: 36px;
+}
+
+
+.comparison-summary-value {
+    font-size: 19px;
+}
+
+
+.comparison-winner-card {
+    padding: 15px;
+}
+
+
+.comparison-winner-content h3 {
+    font-size: 16px;
+}
+
+
+.comparison-winner-content p {
+    font-size: 12px;
+}
+
+
+.comparison-methodology {
+    padding: 14px;
+}
+
+}
+
+/* ==========================================================
+Reduced Motion
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+.comparison-summary-card,
+.comparison-btn,
+.comparison-action-btn,
+.comparison-progress-bar {
+    transition: none !important;
+}
+
+}

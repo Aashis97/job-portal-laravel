@@ -1,0 +1,549 @@
+/* ==========================================================
+   Online Job Portal System
+   Admin — User List Styles
+   File: assets/css/admin/users.css
+   ========================================================== */
+
+/* ==========================================================
+   1. PAGE WRAPPER
+========================================================== */
+
+.admin-users-page {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--admin-text, #0f172a);
+}
+
+/* ==========================================================
+   2. ROLE TABS
+========================================================== */
+
+.admin-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    padding: 6px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+}
+
+.admin-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    color: var(--admin-text-light, #475569);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 550;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+}
+
+.admin-tab:hover {
+    background: var(--admin-border-light, #f1f5f9);
+    color: var(--admin-primary, #2563eb);
+}
+
+.admin-tab.active {
+    background: var(--admin-primary, #2563eb);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.20);
+}
+
+.admin-tab.active .tab-count {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+}
+
+.tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    padding: 0 7px;
+    border-radius: 50px;
+    background: rgba(37, 99, 235, 0.10);
+    color: var(--admin-primary, #2563eb);
+    font-size: 11px;
+    font-weight: 700;
+    transition: var(--admin-transition, all 0.25s ease);
+}
+
+/* ==========================================================
+   3. FILTER FORM
+========================================================== */
+
+.admin-filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 22px;
+    padding: 16px 18px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+}
+
+.filter-field {
+    position: relative;
+    min-width: 160px;
+}
+
+.filter-field.filter-search {
+    flex: 1;
+    min-width: 240px;
+}
+
+.filter-search i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 13px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.filter-search input,
+.filter-field select {
+    width: 100%;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: 9px;
+    background: var(--admin-white, #fff);
+    color: var(--admin-text, #0f172a);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: var(--admin-transition, all 0.25s ease);
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.filter-field select {
+    padding-right: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8.5L1.5 4h9z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 10px;
+    cursor: pointer;
+}
+
+.filter-search input {
+    padding-left: 38px;
+}
+
+.filter-search input:focus,
+.filter-field select:focus {
+    border-color: var(--admin-primary, #2563eb);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.filter-search input::placeholder {
+    color: #94a3b8;
+}
+
+/* ==========================================================
+   4. FILTER ACTIONS
+========================================================== */
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.filter-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 42px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+}
+
+.filter-actions .btn-primary {
+    background: var(--admin-primary, #2563eb);
+    color: #fff;
+}
+
+.filter-actions .btn-primary:hover {
+    background: var(--admin-primary-dark, #1d4ed8);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+.filter-actions .btn-light {
+    background: var(--admin-border-light, #f1f5f9);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    color: var(--admin-text-light, #475569);
+}
+
+.filter-actions .btn-light:hover {
+    background: var(--admin-border, #e2e8f0);
+}
+
+/* ==========================================================
+   5. TABLE CELLS — USER PAGE SPECIFIC
+========================================================== */
+
+.table-user-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.table-user-link strong {
+    transition: color 0.15s ease;
+}
+
+.table-user-link:hover strong {
+    color: var(--admin-primary, #2563eb);
+}
+
+.table-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.table-email {
+    display: block;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--admin-text, #0f172a);
+    font-weight: 500;
+}
+
+.table-subtext {
+    display: block;
+    font-size: 10px;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.muted-value {
+    color: #94a3b8;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* ==========================================================
+   6. ROLE PILLS
+========================================================== */
+
+.role-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 650;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+}
+
+.role-1 {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.role-2 {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.role-3 {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* ==========================================================
+   7. BUTTONS — small variants used in the table
+========================================================== */
+
+.btn-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+.btn-sm i {
+    font-size: 10px;
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--admin-border, #e2e8f0);
+    color: var(--admin-primary, #2563eb);
+}
+
+.btn-outline:hover {
+    background: rgba(37, 99, 235, 0.06);
+    border-color: var(--admin-primary, #2563eb);
+}
+
+/* ==========================================================
+   8. PAGINATION
+========================================================== */
+
+.admin-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 22px;
+    border-top: 1px solid var(--admin-border-light, #f1f5f9);
+    flex-wrap: wrap;
+}
+
+.pagination-pages {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pagination-btn,
+.pagination-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    color: var(--admin-text-light, #475569);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 550;
+    transition: var(--admin-transition, all 0.25s ease);
+}
+
+.pagination-number {
+    padding: 0 10px;
+}
+
+.pagination-btn:hover,
+.pagination-number:hover {
+    border-color: var(--admin-primary, #2563eb);
+    color: var(--admin-primary, #2563eb);
+}
+
+.pagination-number.active {
+    background: var(--admin-primary, #2563eb);
+    border-color: var(--admin-primary, #2563eb);
+    color: #fff;
+}
+
+.pagination-ellipsis {
+    padding: 0 6px;
+    color: #94a3b8;
+    font-size: 12px;
+    user-select: none;
+}
+
+/* ==========================================================
+   9. RESPONSIVE
+========================================================== */
+
+@media (max-width: 992px) {
+    .admin-users-page {
+        padding: 22px;
+    }
+
+    .filter-actions {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .filter-actions .btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-users-page {
+        padding: 20px 16px;
+    }
+
+    .admin-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .admin-tabs::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .admin-tabs::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+
+    .admin-tab {
+        flex-shrink: 0;
+    }
+
+    .filter-field,
+    .filter-field.filter-search {
+        min-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .table-email {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-users-page {
+        padding: 16px 12px;
+    }
+
+    .admin-pagination {
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .pagination-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pagination-pages {
+        order: -1;
+    }
+
+    .table-email {
+        max-width: 150px;
+    }
+}
+
+/* ==========================================================
+   10. DARK MODE
+========================================================== */
+
+body.dark-mode .admin-users-page {
+    color: #e2e8f0;
+}
+
+body.dark-mode .admin-tabs,
+body.dark-mode .admin-filter-form {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .admin-tab {
+    color: #cbd5e1;
+}
+
+body.dark-mode .admin-tab:hover {
+    background: #172033;
+    color: #93c5fd;
+}
+
+body.dark-mode .tab-count {
+    background: rgba(59, 130, 246, 0.18);
+    color: #93c5fd;
+}
+
+body.dark-mode .filter-search input,
+body.dark-mode .filter-field select {
+    background: #172033;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .filter-search input::placeholder {
+    color: #64748b;
+}
+
+body.dark-mode .filter-actions .btn-light {
+    background: #172033;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .filter-actions .btn-light:hover {
+    background: #1e293b;
+}
+
+body.dark-mode .table-email {
+    color: #e2e8f0;
+}
+
+body.dark-mode .pagination-btn,
+body.dark-mode .pagination-number {
+    background: #172033;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .pagination-btn:hover,
+body.dark-mode .pagination-number:hover {
+    border-color: #3b82f6;
+    color: #93c5fd;
+}
+
+body.dark-mode .pagination-number.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+}
+
+/* ==========================================================
+   11. REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-tab,
+    .tab-count,
+    .filter-field select,
+    .filter-search input,
+    .filter-actions .btn,
+    .table-user-link strong,
+    .pagination-btn,
+    .pagination-number {
+        transition: none;
+    }
+}

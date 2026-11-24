@@ -1,0 +1,652 @@
+/* ==========================================================
+   Job Seeker — Settings Page
+   File: assets/css/jobseeker/settings.css
+   Scope: .jobseeker-settings-page
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Design tokens (scoped under the page wrapper so they never
+   leak into other dashboard pages)
+   ---------------------------------------------------------- */
+.jobseeker-settings-page {
+    --jss-primary:        #3b82f6;
+    --jss-primary-dark:   #2563eb;
+    --jss-primary-soft:   #eff6ff;
+    --jss-primary-ring:   rgba(59, 130, 246, 0.18);
+    --jss-accent:         #8b5cf6;
+
+    --jss-success:        #10b981;
+    --jss-success-soft:   #ecfdf5;
+    --jss-warning:        #f59e0b;
+    --jss-warning-soft:   #fffbeb;
+    --jss-danger:         #ef4444;
+    --jss-danger-soft:    #fef2f2;
+    --jss-info:           #0ea5e9;
+    --jss-info-soft:      #f0f9ff;
+
+    --jss-bg:             #f8fafc;
+    --jss-card:           #ffffff;
+    --jss-border:         #e2e8f0;
+    --jss-border-strong:  #cbd5e1;
+
+    --jss-text:           #0f172a;
+    --jss-text-2:         #334155;
+    --jss-muted:          #64748b;
+    --jss-dim:            #94a3b8;
+
+    --jss-radius:         16px;
+    --jss-radius-sm:      10px;
+    --jss-radius-xs:      8px;
+
+    --jss-shadow-xs:      0 1px 2px rgba(15, 23, 42, 0.05);
+    --jss-shadow-sm:      0 2px 8px rgba(15, 23, 42, 0.06);
+    --jss-shadow-md:      0 8px 24px rgba(15, 23, 42, 0.08);
+    --jss-shadow-focus:   0 0 0 4px var(--jss-primary-ring);
+
+    --jss-transition:     0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* layout */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 4px 0 32px;
+    color: var(--jss-text);
+    font-family: inherit;
+    font-size: 14.5px;
+    line-height: 1.55;
+}
+
+/* ----------------------------------------------------------
+   Page header
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 4px 4px;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+.jobseeker-settings-page .page-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--jss-primary);
+    background: var(--jss-primary-soft);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.jobseeker-settings-page .page-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--jss-text);
+    margin: 0;
+}
+
+/* ----------------------------------------------------------
+   Alerts
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--jss-radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    box-shadow: var(--jss-shadow-xs);
+    animation: jssSlideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jobseeker-settings-page .alert::before {
+    content: "\f05a"; /* info-circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.jobseeker-settings-page .alert-success {
+    background: var(--jss-success-soft);
+    border-color: #a7f3d0;
+    color: #065f46;
+}
+.jobseeker-settings-page .alert-success::before {
+    content: "\f058"; /* check-circle */
+    color: var(--jss-success);
+}
+
+.jobseeker-settings-page .alert-danger,
+.jobseeker-settings-page .alert-error {
+    background: var(--jss-danger-soft);
+    border-color: #fecaca;
+    color: #991b1b;
+}
+.jobseeker-settings-page .alert-danger::before,
+.jobseeker-settings-page .alert-error::before {
+    content: "\f06a"; /* exclamation-circle */
+    color: var(--jss-danger);
+}
+
+.jobseeker-settings-page .alert-warning {
+    background: var(--jss-warning-soft);
+    border-color: #fde68a;
+    color: #92400e;
+}
+.jobseeker-settings-page .alert-warning::before {
+    content: "\f071"; /* triangle-exclamation */
+    color: var(--jss-warning);
+}
+
+.jobseeker-settings-page .alert-info {
+    background: var(--jss-info-soft);
+    border-color: #bae6fd;
+    color: #075985;
+}
+.jobseeker-settings-page .alert-info::before {
+    color: var(--jss-info);
+}
+
+@keyframes jssSlideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------------------------------------
+   Settings cards
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .settings-card {
+    background: var(--jss-card);
+    border: 1px solid var(--jss-border);
+    border-radius: var(--jss-radius);
+    box-shadow: var(--jss-shadow-sm);
+    overflow: hidden;
+    transition: box-shadow var(--jss-transition),
+                border-color var(--jss-transition);
+}
+
+.jobseeker-settings-page .settings-card:hover {
+    box-shadow: var(--jss-shadow-md);
+    border-color: var(--jss-border-strong);
+}
+
+.jobseeker-settings-page .settings-card-header {
+    padding: 22px 26px 18px;
+    border-bottom: 1px solid var(--jss-border);
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fafbfc 100%
+    );
+    position: relative;
+}
+
+.jobseeker-settings-page .settings-card-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+        180deg,
+        var(--jss-primary) 0%,
+        var(--jss-accent) 100%
+    );
+}
+
+.jobseeker-settings-page .settings-card-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--jss-text);
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+}
+
+.jobseeker-settings-page .settings-card-header p {
+    font-size: 13px;
+    color: var(--jss-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ----------------------------------------------------------
+   Account info grid
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .settings-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.jobseeker-settings-page .settings-info-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 26px;
+    border-right: 1px solid var(--jss-border);
+    border-bottom: 1px solid var(--jss-border);
+    min-width: 0;
+    transition: background var(--jss-transition);
+}
+
+.jobseeker-settings-page .settings-info-grid > div:hover {
+    background: #fafbfc;
+}
+
+/* Remove right border on last column */
+.jobseeker-settings-page .settings-info-grid > div:nth-child(3n) {
+    border-right: none;
+}
+
+/* Remove bottom border on last row */
+.jobseeker-settings-page .settings-info-grid > div:nth-last-child(-n + 3):nth-child(3n + 1),
+.jobseeker-settings-page .settings-info-grid > div:nth-last-child(-n + 2):nth-child(3n + 2),
+.jobseeker-settings-page .settings-info-grid > div:last-child {
+    border-bottom: none;
+}
+
+.jobseeker-settings-page .settings-info-grid span {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--jss-muted);
+}
+
+.jobseeker-settings-page .settings-info-grid strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--jss-text);
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* ----------------------------------------------------------
+   Settings form
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .settings-form {
+    padding: 24px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.jobseeker-settings-page .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.jobseeker-settings-page .form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--jss-text-2);
+    letter-spacing: 0.01em;
+}
+
+.jobseeker-settings-page .form-group input[type="password"],
+.jobseeker-settings-page .form-group input[type="text"],
+.jobseeker-settings-page .form-group input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--jss-text);
+    background: #ffffff;
+    border: 1.5px solid var(--jss-border);
+    border-radius: var(--jss-radius-sm);
+    outline: none;
+    transition: border-color var(--jss-transition),
+                box-shadow var(--jss-transition),
+                background var(--jss-transition);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.jobseeker-settings-page .form-group input::placeholder {
+    color: var(--jss-dim);
+}
+
+.jobseeker-settings-page .form-group input:hover {
+    border-color: var(--jss-border-strong);
+}
+
+.jobseeker-settings-page .form-group input:focus {
+    border-color: var(--jss-primary);
+    box-shadow: var(--jss-shadow-focus);
+    background: #ffffff;
+}
+
+/* ----------------------------------------------------------
+   Password field with toggle
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.jobseeker-settings-page .password-field input {
+    padding-right: 46px;
+}
+
+.jobseeker-settings-page .password-toggle {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--jss-muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all var(--jss-transition);
+}
+
+.jobseeker-settings-page .password-toggle:hover {
+    background: var(--jss-primary-soft);
+    color: var(--jss-primary);
+}
+
+.jobseeker-settings-page .password-toggle:focus-visible {
+    outline: 2px solid var(--jss-primary);
+    outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------
+   Password strength meter
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .password-strength {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.jobseeker-settings-page .strength-bars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+}
+
+.jobseeker-settings-page .strength-bars > span {
+    height: 5px;
+    border-radius: 3px;
+    background: #e2e8f0;
+    transition: background var(--jss-transition);
+}
+
+.jobseeker-settings-page .strength-bars > span.active {
+    background: var(--jss-primary);
+}
+
+/* Colour states driven by a data attribute on .password-strength */
+.jobseeker-settings-page .password-strength[data-level="1"] .strength-bars > span.active { background: #ef4444; }
+.jobseeker-settings-page .password-strength[data-level="2"] .strength-bars > span.active { background: #f59e0b; }
+.jobseeker-settings-page .password-strength[data-level="3"] .strength-bars > span.active { background: #eab308; }
+.jobseeker-settings-page .password-strength[data-level="4"] .strength-bars > span.active { background: #22c55e; }
+.jobseeker-settings-page .password-strength[data-level="5"] .strength-bars > span.active { background: #059669; }
+
+.jobseeker-settings-page .strength-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--jss-muted);
+    min-height: 16px;
+    transition: color var(--jss-transition);
+}
+
+.jobseeker-settings-page .strength-text.weak   { color: #dc2626; }
+.jobseeker-settings-page .strength-text.medium { color: #d97706; }
+.jobseeker-settings-page .strength-text.strong { color: #059669; }
+
+/* ----------------------------------------------------------
+   Password requirements checklist
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .password-requirements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-top: 4px;
+}
+
+.jobseeker-settings-page .password-requirements > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--jss-muted);
+    transition: color var(--jss-transition);
+}
+
+.jobseeker-settings-page .password-requirements > span i {
+    font-size: 11px;
+    color: var(--jss-dim);
+    transition: color var(--jss-transition);
+}
+
+.jobseeker-settings-page .password-requirements > span.valid {
+    color: var(--jss-success);
+}
+
+.jobseeker-settings-page .password-requirements > span.valid i {
+    color: var(--jss-success);
+}
+
+/* ----------------------------------------------------------
+   Password match feedback
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .password-match-message {
+    font-size: 12.5px;
+    font-weight: 500;
+    min-height: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+    color: transparent;
+    transition: color var(--jss-transition);
+}
+
+.jobseeker-settings-page .password-match-message.match {
+    color: var(--jss-success);
+}
+
+.jobseeker-settings-page .password-match-message.no-match {
+    color: var(--jss-danger);
+}
+
+/* ----------------------------------------------------------
+   Form actions
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .settings-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 20px;
+    margin-top: 4px;
+    border-top: 1px solid var(--jss-border);
+}
+
+/* ----------------------------------------------------------
+   Buttons (only what's needed here — the shared dashboard
+   already styles .btn/.btn-primary, but we refine the look)
+   ---------------------------------------------------------- */
+.jobseeker-settings-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: var(--jss-radius-sm);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--jss-transition);
+    min-height: 42px;
+    white-space: nowrap;
+}
+
+.jobseeker-settings-page .btn:focus-visible {
+    outline: none;
+    box-shadow: var(--jss-shadow-focus);
+}
+
+.jobseeker-settings-page .btn-primary {
+    background: linear-gradient(
+        135deg,
+        var(--jss-primary) 0%,
+        var(--jss-primary-dark) 100%
+    );
+    color: #ffffff;
+    border-color: var(--jss-primary);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.jobseeker-settings-page .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+}
+
+.jobseeker-settings-page .btn-primary:active {
+    transform: translateY(0);
+}
+
+.jobseeker-settings-page .btn-primary:disabled,
+.jobseeker-settings-page .btn-primary[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.jobseeker-settings-page .btn i {
+    font-size: 13px;
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .jobseeker-settings-page .settings-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .jobseeker-settings-page .settings-info-grid > div:nth-child(3n) {
+        border-right: 1px solid var(--jss-border);
+    }
+
+    .jobseeker-settings-page .settings-info-grid > div:nth-child(2n) {
+        border-right: none;
+    }
+
+    .jobseeker-settings-page .settings-info-grid > div:nth-last-child(-n + 3):nth-child(3n + 1),
+    .jobseeker-settings-page .settings-info-grid > div:nth-last-child(-n + 2):nth-child(3n + 2) {
+        border-bottom: 1px solid var(--jss-border);
+    }
+
+    .jobseeker-settings-page .settings-info-grid > div:nth-last-child(-n + 2):nth-child(2n + 1),
+    .jobseeker-settings-page .settings-info-grid > div:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .jobseeker-settings-page {
+        gap: 18px;
+    }
+
+    .jobseeker-settings-page .page-header h1 {
+        font-size: 22px;
+    }
+
+    .jobseeker-settings-page .settings-card-header {
+        padding: 18px 20px 14px;
+    }
+
+    .jobseeker-settings-page .settings-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jobseeker-settings-page .settings-info-grid > div {
+        padding: 16px 20px;
+        border-right: none !important;
+        border-bottom: 1px solid var(--jss-border);
+    }
+
+    .jobseeker-settings-page .settings-info-grid > div:last-child {
+        border-bottom: none;
+    }
+
+    .jobseeker-settings-page .settings-form {
+        padding: 20px 20px 22px;
+        gap: 16px;
+    }
+
+    .jobseeker-settings-page .settings-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .jobseeker-settings-page .settings-form-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .jobseeker-settings-page .password-requirements {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* ----------------------------------------------------------
+   Reduced motion
+   ---------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .jobseeker-settings-page *,
+    .jobseeker-settings-page *::before,
+    .jobseeker-settings-page *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* ----------------------------------------------------------
+   Print
+   ---------------------------------------------------------- */
+@media print {
+    .jobseeker-settings-page .settings-card {
+        box-shadow: none;
+        border: 1px solid #d1d5db;
+        break-inside: avoid;
+    }
+
+    .jobseeker-settings-page .settings-form-actions,
+    .jobseeker-settings-page .password-toggle {
+        display: none !important;
+    }
+}

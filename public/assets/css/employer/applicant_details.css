@@ -1,0 +1,1698 @@
+/* ==========================================================
+   Online Job Portal System
+   Employer Applicant Details
+   File: assets/css/employer/applicant-details.css
+   ========================================================== */
+
+
+/* ==========================================================
+   Page
+   ========================================================== */
+
+.applicant-details-page {
+    padding-bottom: 45px;
+}
+
+
+/* ==========================================================
+   Back Link
+   ========================================================== */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    color: #64748b;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-link:hover {
+    color: #2563eb;
+
+    transform: translateX(-3px);
+}
+
+
+/* ==========================================================
+   Candidate Header
+   ========================================================== */
+
+.candidate-header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 32px rgba(15, 23, 42, 0.05);
+}
+
+.candidate-header-left {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    gap: 17px;
+}
+
+.candidate-avatar-large {
+    width: 76px;
+    height: 76px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1e3a8a
+        );
+
+    border-radius: 21px;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    box-shadow:
+        0 12px 28px rgba(37, 99, 235, 0.20);
+}
+
+.candidate-header-info {
+    min-width: 0;
+}
+
+.candidate-name-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+}
+
+.candidate-name-row h1 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.candidate-email {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+.candidate-email:hover {
+    color: #2563eb;
+}
+
+.candidate-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 7px 17px;
+
+    margin-top: 9px;
+}
+
+.candidate-meta span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.candidate-meta i {
+    color: #94a3b8;
+}
+
+.candidate-header-actions {
+    flex-shrink: 0;
+}
+
+.resume-button {
+    min-height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 17px;
+
+    color: #ffffff;
+
+    background: #2563eb;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.resume-button:hover {
+    color: #ffffff;
+
+    background: #1d4ed8;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.20);
+
+    transform: translateY(-1px);
+}
+
+.resume-unavailable {
+    min-height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    color: #94a3b8;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+    font-weight: 650;
+}
+
+
+/* ==========================================================
+   Application Status
+   ========================================================== */
+
+.application-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+.status-applied {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.status-under-review {
+    color: #7c3aed;
+    background: #f5f3ff;
+}
+
+.status-shortlisted {
+    color: #d97706;
+    background: #fffbeb;
+}
+
+.status-interview-scheduled {
+    color: #0891b2;
+    background: #ecfeff;
+}
+
+.status-selected {
+    color: #059669;
+    background: #ecfdf5;
+}
+
+.status-rejected {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+.status-withdrawn {
+    color: #64748b;
+    background: #f1f5f9;
+}
+
+
+/* ==========================================================
+   Main Grid
+   ========================================================== */
+
+.applicant-details-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        330px;
+
+    align-items: start;
+
+    gap: 22px;
+}
+
+.details-main-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    min-width: 0;
+}
+
+.details-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* ==========================================================
+   Common Card
+   ========================================================== */
+
+.details-card {
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 25px rgba(15, 23, 42, 0.045);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 19px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.card-kicker {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #2563eb;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+.card-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.card-header-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #2563eb;
+
+    background: #eff6ff;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+.card-header-icon.ai-icon {
+    color: #7c3aed;
+    background: #f5f3ff;
+}
+
+
+/* ==========================================================
+   Job Detail
+   ========================================================== */
+
+.job-detail-box {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 13px;
+}
+
+.job-company-logo {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 13px;
+}
+
+.job-company-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.job-detail-content {
+    min-width: 0;
+}
+
+.job-category {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #2563eb;
+
+    font-size: 9px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.job-detail-content h3 {
+    overflow: hidden;
+
+    margin: 0 0 3px;
+
+    color: #0f172a;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.job-detail-content p {
+    margin: 0 0 9px;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.job-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 6px 14px;
+}
+
+.job-meta span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.job-meta i {
+    color: #94a3b8;
+}
+
+
+/* ==========================================================
+   Candidate Skills
+   ========================================================== */
+
+.large-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.large-skill-tag {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    color: #475569;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.large-skill-tag i {
+    color: #94a3b8;
+
+    font-size: 7px;
+}
+
+.large-skill-tag.matched {
+    color: #047857;
+
+    background: #ecfdf5;
+
+    border-color: #a7f3d0;
+}
+
+.large-skill-tag.matched i {
+    color: #059669;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   Skill Comparison
+   ========================================================== */
+
+.comparison-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    align-items: center;
+
+    padding: 16px;
+
+    margin-bottom: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 13px;
+}
+
+.comparison-number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+
+    text-align: center;
+}
+
+.comparison-number strong {
+    color: #0f172a;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.comparison-number span {
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.comparison-divider {
+    width: 1px;
+    height: 34px;
+
+    justify-self: center;
+
+    background: #e2e8f0;
+}
+
+.comparison-groups {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+.comparison-group h3 {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.matched-heading {
+    color: #047857;
+}
+
+.missing-heading {
+    color: #dc2626;
+}
+
+.comparison-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.comparison-tag {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 6px 9px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.comparison-tag.matched {
+    color: #047857;
+    background: #ecfdf5;
+}
+
+.comparison-tag.missing {
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+.comparison-empty {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================================
+   Empty Card
+   ========================================================== */
+
+.card-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #94a3b8;
+}
+
+.card-empty i {
+    margin-bottom: 9px;
+
+    font-size: 23px;
+}
+
+.card-empty p {
+    margin: 0;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================================
+   AI Match Score Card
+   ========================================================== */
+
+.score-card {
+    padding: 22px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f172a,
+            #1e3a8a
+        );
+
+    border: 1px solid #1e3a8a;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 32px rgba(15, 23, 42, 0.15);
+}
+
+.score-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    color: #dbeafe;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.score-card-header i {
+    color: #93c5fd;
+
+    font-size: 15px;
+}
+
+.large-score-circle {
+    --score: 0;
+
+    width: 150px;
+    height: 150px;
+
+    margin: 0 auto 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #60a5fa 0deg,
+            #60a5fa calc(var(--score) * 3.6deg),
+            rgba(255, 255, 255, 0.12)
+                calc(var(--score) * 3.6deg),
+            rgba(255, 255, 255, 0.12) 360deg
+        );
+
+    position: relative;
+}
+
+.large-score-circle::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    background: #172554;
+
+    border-radius: 50%;
+}
+
+.score-circle-inner {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.score-circle-inner strong {
+    color: #ffffff;
+
+    font-size: 31px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.score-circle-inner span {
+    margin-top: 5px;
+
+    color: #bfdbfe;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.score-rating strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+.score-rating p {
+    max-width: 250px;
+
+    margin: 0 auto;
+
+    color: #bfdbfe;
+
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.score-not-calculated {
+    padding: 25px 10px;
+}
+
+.score-not-calculated i {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #93c5fd;
+
+    font-size: 25px;
+}
+
+.score-not-calculated strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+.score-not-calculated p {
+    margin: 0;
+
+    color: #bfdbfe;
+
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   AI Ranking
+   ========================================================== */
+
+.ranking-card {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    background: #faf5ff;
+
+    border: 1px solid #e9d5ff;
+
+    border-radius: 15px;
+}
+
+.ranking-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #7c3aed;
+
+    background: #f3e8ff;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+}
+
+.ranking-content {
+    min-width: 0;
+}
+
+.ranking-content > span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #7c3aed;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.ranking-content strong {
+    display: block;
+
+    color: #4c1d95;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.ranking-content small {
+    color: #8b5cf6;
+
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   Information List
+   ========================================================== */
+
+.compact-card {
+    padding: 20px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.info-row:first-child {
+    padding-top: 0;
+}
+
+.info-row:last-child {
+    padding-bottom: 0;
+
+    border-bottom: 0;
+}
+
+.info-row > span:first-child {
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.info-row > strong {
+    color: #0f172a;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+/* ==========================================================
+   Next Action
+   ========================================================== */
+
+.next-action-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    padding: 16px;
+
+    color: #1e40af;
+
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 15px;
+}
+
+.next-action-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #2563eb;
+
+    background: #dbeafe;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+}
+
+.next-action-card strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #1e3a8a;
+
+    font-size: 11px;
+}
+
+.next-action-card p {
+    margin: 0;
+
+    color: #3b82f6;
+
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+
+/* ==========================================================
+   1200px
+   ========================================================== */
+
+@media (max-width: 1200px) {
+
+    .applicant-details-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            300px;
+    }
+
+}
+
+
+/* ==========================================================
+   992px
+   ========================================================== */
+
+@media (max-width: 992px) {
+
+    .applicant-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-sidebar {
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        align-items: start;
+    }
+
+    .score-card {
+        grid-row: span 2;
+    }
+
+    .next-action-card {
+        grid-column: 2;
+    }
+
+}
+
+
+/* ==========================================================
+   768px
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .candidate-header-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .candidate-header-actions {
+        width: 100%;
+    }
+
+    .resume-button,
+    .resume-unavailable {
+        width: 100%;
+    }
+
+    .details-sidebar {
+        display: flex;
+    }
+
+    .comparison-groups {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================================
+   480px
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .candidate-header-card {
+        padding: 17px;
+
+        border-radius: 16px;
+    }
+
+    .candidate-header-left {
+        align-items: flex-start;
+    }
+
+    .candidate-avatar-large {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 16px;
+
+        font-size: 17px;
+    }
+
+    .candidate-name-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+    .candidate-name-row h1 {
+        font-size: 21px;
+    }
+
+    .candidate-email {
+        font-size: 11px;
+    }
+
+    .candidate-meta {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 6px;
+    }
+
+    .details-card {
+        padding: 17px;
+
+        border-radius: 16px;
+    }
+
+    .job-detail-box {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .job-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .comparison-summary {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .comparison-divider {
+        width: 50px;
+        height: 1px;
+    }
+
+    .large-score-circle {
+        width: 135px;
+        height: 135px;
+    }
+
+}
+
+
+/* ==========================================================
+   320px
+   ========================================================== */
+
+@media (max-width: 320px) {
+
+    .candidate-header-card {
+        padding: 14px;
+    }
+
+    .candidate-avatar-large {
+        width: 50px;
+        height: 50px;
+
+        font-size: 15px;
+    }
+
+    .candidate-name-row h1 {
+        font-size: 19px;
+    }
+
+    .details-card {
+        padding: 14px;
+    }
+
+    .large-score-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .score-circle-inner strong {
+        font-size: 26px;
+    }
+
+}
+
+/* ==========================================================
+   Application Status Card
+========================================================== */
+
+.applicant-status-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ==========================================================
+   Header
+========================================================== */
+
+.status-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px;
+    border-bottom: 1px solid #eef0f4;
+}
+
+.status-card-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.status-card-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 18px;
+}
+
+.status-card-title h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.status-card-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   Current Status Badge
+========================================================== */
+
+.application-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-applied {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.status-review {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.status-shortlisted {
+    background: #fefce8;
+    color: #ca8a04;
+}
+
+.status-interview {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.status-selected {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.status-rejected {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.status-withdrawn {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+
+/* ==========================================================
+   Card Body
+========================================================== */
+
+.status-card-body {
+    padding: 24px;
+}
+
+
+/* ==========================================================
+   Form
+========================================================== */
+
+.application-status-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.status-form-group {
+    flex: 1;
+}
+
+.status-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-select-wrapper {
+    position: relative;
+}
+
+.status-select-icon {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+}
+
+.status-select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 42px;
+    border: 1px solid #dbe1e8;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.status-select:hover {
+    border-color: #94a3b8;
+}
+
+.status-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.status-select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   Update Button
+========================================================== */
+
+.btn-update-status {
+    min-height: 48px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-update-status:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.20);
+}
+
+.btn-update-status:active {
+    transform: translateY(0);
+}
+
+.btn-update-status:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ==========================================================
+   Progress Timeline
+========================================================== */
+
+.status-progress {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30px;
+    overflow-x: auto;
+    padding: 5px 0 10px;
+}
+
+.progress-step {
+    min-width: 105px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.progress-icon {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: 2px solid #e2e8f0;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.progress-step span {
+    display: block;
+    font-size: 10px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.progress-line {
+    flex: 1;
+    min-width: 30px;
+    height: 2px;
+    margin-top: 19px;
+    background: #e2e8f0;
+    transition: 0.2s ease;
+}
+
+.progress-step.completed {
+    color: #2563eb;
+}
+
+.progress-step.completed .progress-icon {
+    background: #eff6ff;
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.progress-step.current .progress-icon {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.10);
+}
+
+.progress-line.completed {
+    background: #2563eb;
+}
+
+
+/* ==========================================================
+   Status Notices
+========================================================== */
+
+.status-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 14px 16px;
+    border-radius: 10px;
+}
+
+.status-notice > i {
+    margin-top: 2px;
+    font-size: 17px;
+}
+
+.status-notice strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+}
+
+.status-notice p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.status-notice-success {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.status-notice-danger {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.status-notice-warning {
+    background: #fffbeb;
+    color: #b45309;
+}
+
+
+/* ==========================================================
+   Responsive - 992px
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .status-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .application-status-badge {
+        align-self: flex-start;
+    }
+
+}
+
+
+/* ==========================================================
+   Responsive - 768px
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .application-status-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-update-status {
+        width: 100%;
+    }
+
+    .status-progress {
+        padding-bottom: 15px;
+    }
+
+}
+
+
+/* ==========================================================
+   Responsive - 480px
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .status-card-header,
+    .status-card-body {
+        padding: 18px;
+    }
+
+    .status-card-title {
+        align-items: flex-start;
+    }
+
+    .status-card-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .status-card-title h2 {
+        font-size: 16px;
+    }
+
+    .status-card-title p {
+        font-size: 12px;
+    }
+
+    .status-progress {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+
+    .progress-step {
+        min-width: 90px;
+    }
+
+}

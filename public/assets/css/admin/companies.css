@@ -1,0 +1,497 @@
+/* ==========================================================
+   Online Job Portal System
+   Admin — Companies List
+   File: assets/css/admin/companies.css
+   ========================================================== */
+
+/* ==========================================================
+   1. WRAPPER
+========================================================== */
+
+.admin-companies-page {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--admin-text, #0f172a);
+}
+
+/* ==========================================================
+   2. TABS
+========================================================== */
+
+.admin-companies-page .admin-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    padding: 6px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+}
+
+.admin-companies-page .admin-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    color: var(--admin-text-light, #475569);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 550;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+}
+
+.admin-companies-page .admin-tab:hover {
+    background: var(--admin-border-light, #f1f5f9);
+    color: var(--admin-primary, #2563eb);
+}
+
+.admin-companies-page .admin-tab.active {
+    background: var(--admin-primary, #2563eb);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.20);
+}
+
+.admin-companies-page .admin-tab.active .tab-count {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+}
+
+.admin-companies-page .admin-tab i {
+    font-size: 11px;
+    opacity: 0.85;
+}
+
+.admin-companies-page .tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    padding: 0 7px;
+    border-radius: 50px;
+    background: rgba(37, 99, 235, 0.10);
+    color: var(--admin-primary, #2563eb);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.admin-companies-page .tab-count-warning {
+    background: rgba(217, 119, 6, 0.14);
+    color: #b45309;
+}
+
+/* ==========================================================
+   3. FILTER FORM
+========================================================== */
+
+.admin-companies-page .admin-filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 22px;
+    padding: 16px 18px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+}
+
+.admin-companies-page .filter-field {
+    position: relative;
+    min-width: 200px;
+}
+
+.admin-companies-page .filter-field.filter-search {
+    flex: 1;
+    min-width: 260px;
+}
+
+.admin-companies-page .filter-search i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.admin-companies-page .filter-search input {
+    width: 100%;
+    height: 42px;
+    padding: 0 14px 0 38px;
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: 9px;
+    background: var(--admin-white, #fff);
+    color: var(--admin-text, #0f172a);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: var(--admin-transition, all 0.25s ease);
+    box-sizing: border-box;
+}
+
+.admin-companies-page .filter-search input:focus {
+    border-color: var(--admin-primary, #2563eb);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.admin-companies-page .filter-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.admin-companies-page .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 42px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+}
+
+.admin-companies-page .btn-primary {
+    background: var(--admin-primary, #2563eb);
+    color: #fff;
+}
+
+.admin-companies-page .btn-primary:hover {
+    background: var(--admin-primary-dark, #1d4ed8);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+.admin-companies-page .btn-light {
+    background: var(--admin-border-light, #f1f5f9);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    color: var(--admin-text-light, #475569);
+}
+
+.admin-companies-page .btn-light:hover {
+    background: var(--admin-border, #e2e8f0);
+}
+
+/* ==========================================================
+   4. COMPANIES TABLE
+========================================================== */
+
+.companies-table { min-width: 820px; }
+
+/* Company cell */
+.company-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}
+
+.company-logo-mini {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.company-logo-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-logo-mini .logo-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+.company-name-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    max-width: 240px;
+}
+
+.company-name-link strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+}
+
+.company-name-link:hover strong {
+    color: var(--admin-primary, #2563eb);
+}
+
+/* Reused classes */
+.table-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.table-user-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.table-user-link strong {
+    display: block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+}
+
+.table-user-link:hover strong {
+    color: var(--admin-primary, #2563eb);
+}
+
+.table-subtext {
+    display: block;
+    font-size: 10px;
+    color: #94a3b8;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 220px;
+}
+
+.muted-value {
+    color: #94a3b8;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Job count cell */
+.jobs-count-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+.jobs-count-cell strong {
+    color: var(--admin-dark, #0f172a);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Small button */
+.btn-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+.btn-sm i { font-size: 10px; }
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--admin-border, #e2e8f0);
+    color: var(--admin-primary, #2563eb);
+}
+
+.btn-outline:hover {
+    background: rgba(37, 99, 235, 0.06);
+    border-color: var(--admin-primary, #2563eb);
+}
+
+/* ==========================================================
+   5. PAGINATION
+========================================================== */
+
+.admin-companies-page .admin-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 22px;
+    border-top: 1px solid var(--admin-border-light, #f1f5f9);
+    flex-wrap: wrap;
+}
+
+.admin-companies-page .pagination-pages {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.admin-companies-page .pagination-btn,
+.admin-companies-page .pagination-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    color: var(--admin-text-light, #475569);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 550;
+    transition: var(--admin-transition, all 0.25s ease);
+}
+
+.admin-companies-page .pagination-number { padding: 0 10px; }
+
+.admin-companies-page .pagination-btn:hover,
+.admin-companies-page .pagination-number:hover {
+    border-color: var(--admin-primary, #2563eb);
+    color: var(--admin-primary, #2563eb);
+}
+
+.admin-companies-page .pagination-number.active {
+    background: var(--admin-primary, #2563eb);
+    border-color: var(--admin-primary, #2563eb);
+    color: #fff;
+}
+
+.admin-companies-page .pagination-ellipsis {
+    padding: 0 6px;
+    color: #94a3b8;
+    font-size: 12px;
+    user-select: none;
+}
+
+/* ==========================================================
+   6. RESPONSIVE
+========================================================== */
+
+@media (max-width: 992px) {
+    .admin-companies-page { padding: 22px; }
+    .admin-companies-page .filter-actions { margin-left: 0; width: 100%; }
+    .admin-companies-page .filter-actions .btn { flex: 1; justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .admin-companies-page { padding: 20px 16px; }
+
+    .admin-companies-page .admin-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .admin-companies-page .admin-tab { flex-shrink: 0; }
+
+    .admin-companies-page .filter-field,
+    .admin-companies-page .filter-field.filter-search {
+        min-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-companies-page { padding: 16px 12px; }
+
+    .company-name-link strong { max-width: 160px; }
+    .table-user-link strong   { max-width: 140px; }
+    .table-subtext            { max-width: 160px; }
+}
+
+/* ==========================================================
+   7. DARK MODE
+========================================================== */
+
+body.dark-mode .admin-companies-page .admin-tabs,
+body.dark-mode .admin-companies-page .admin-filter-form {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .admin-companies-page .admin-tab {
+    color: #cbd5e1;
+}
+
+body.dark-mode .admin-companies-page .admin-tab:hover {
+    background: #172033;
+    color: #93c5fd;
+}
+
+body.dark-mode .admin-companies-page .tab-count {
+    background: rgba(59, 130, 246, 0.18);
+    color: #93c5fd;
+}
+
+body.dark-mode .admin-companies-page .filter-search input {
+    background: #172033;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .admin-companies-page .btn-light {
+    background: #172033;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .company-logo-mini {
+    background: #172033;
+    border-color: #334155;
+}
+
+body.dark-mode .jobs-count-cell strong {
+    color: #f8fafc;
+}
+
+body.dark-mode .admin-companies-page .pagination-btn,
+body.dark-mode .admin-companies-page .pagination-number {
+    background: #172033;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+/* ==========================================================
+   8. REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-companies-page .admin-tab,
+    .admin-companies-page .btn,
+    .admin-companies-page .pagination-btn,
+    .admin-companies-page .pagination-number {
+        transition: none;
+    }
+}

@@ -1,0 +1,128 @@
+/* ==========================================================
+   Online Job Portal System
+   Employer Module — Base Layer
+   File: assets/css/employer/_base.css
+
+   Loaded once globally (dashboard_header.php) BEFORE any
+   page-specific CSS. Only adds safe, non-destructive rules.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. Box model sanity (safe — matches every modern reset)
+   ========================================================== */
+
+.dashboard-main,
+.dashboard-main *,
+.dashboard-main *::before,
+.dashboard-main *::after {
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   2. Font family safety net
+   Ensures pages that forgot to declare Poppins still get it.
+   ========================================================== */
+
+.dashboard-main {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial,
+                 sans-serif;
+    color: var(--text-strong);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ==========================================================
+   3. Global focus ring — WCAG 2.1 AA
+   ========================================================== */
+
+.dashboard-main :is(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+}
+
+/* Suppress the default outline for mouse users only */
+.dashboard-main :is(a, button):focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Danger-styled controls get a red ring */
+.dashboard-main :is(.btn-danger, [data-variant="danger"]):focus-visible {
+    outline-color: rgba(220, 38, 38, 0.35);
+}
+
+
+/* ==========================================================
+   4. Minimum readable text size
+   Your page CSS has 8–9px helper text in several places.
+   This is a safety net — the page CSS should still be fixed.
+   ========================================================== */
+
+.dashboard-main small,
+.dashboard-main .text-dim,
+.dashboard-main .field-help {
+    font-size: max(11px, 0.6875rem);
+}
+
+
+/* ==========================================================
+   5. Reduced motion — global
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-main *,
+    .dashboard-main *::before,
+    .dashboard-main *::after {
+        animation-duration:        0.01ms !important;
+        animation-iteration-count: 1      !important;
+        transition-duration:       0.01ms !important;
+        scroll-behavior:           auto   !important;
+    }
+}
+
+
+/* ==========================================================
+   6. Print styles
+   ========================================================== */
+
+@media print {
+    .dashboard-main .btn,
+    .dashboard-main .applicants-back-btn,
+    .dashboard-main .back-dashboard-btn,
+    .dashboard-main .back-to-top,
+    .dashboard-main .footer-social,
+    .dashboard-main form button[type="submit"] {
+        display: none !important;
+    }
+
+    .dashboard-main .analytics-panel,
+    .dashboard-main .applicants-card,
+    .dashboard-main .settings-card,
+    .dashboard-main .job-form-card,
+    .dashboard-main .details-card {
+        box-shadow: none !important;
+        border: 1px solid #d1d5db !important;
+        break-inside: avoid;
+    }
+}
+
+
+/* ==========================================================
+   7. Utility classes
+   ========================================================== */
+
+.dashboard-main .u-text-muted   { color: var(--text-muted); }
+.dashboard-main .u-text-dim     { color: var(--text-dim); }
+.dashboard-main .u-text-danger  { color: var(--danger-500); }
+.dashboard-main .u-text-success { color: var(--success-600); }
+.dashboard-main .u-text-primary { color: var(--brand-500); }
+
+.dashboard-main .u-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

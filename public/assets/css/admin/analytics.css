@@ -1,0 +1,547 @@
+/* ==========================================================
+   Online Job Portal System
+   Admin — Analytics
+   File: assets/css/admin/analytics.css
+   ========================================================== */
+
+.admin-analytics-page {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--admin-text, #0f172a);
+}
+
+/* ==========================================================
+   1. PERIOD SWITCHER
+========================================================== */
+
+.period-switcher {
+    display: inline-flex;
+    gap: 4px;
+    padding: 5px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: 12px;
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+    flex-wrap: wrap;
+}
+
+.period-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: var(--admin-text-light, #475569);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+}
+
+.period-btn:hover {
+    background: var(--admin-border-light, #f1f5f9);
+    color: var(--admin-primary, #2563eb);
+}
+
+.period-btn.active {
+    background: var(--admin-primary, #2563eb);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.22);
+}
+
+/* ==========================================================
+   2. KPI GRID
+========================================================== */
+
+.analytics-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.analytics-kpi-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 18px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+    transition: var(--admin-transition, all 0.25s ease);
+    min-width: 0;
+}
+
+.analytics-kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--admin-shadow, 0 8px 25px rgba(15,23,42,0.07));
+    border-color: rgba(37, 99, 235, 0.20);
+}
+
+.kpi-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.kpi-blue    { background: rgba(37, 99, 235, 0.12);  color: #2563eb; }
+.kpi-purple  { background: rgba(124, 58, 237, 0.12); color: #7c3aed; }
+.kpi-cyan    { background: rgba(8, 145, 178, 0.12);  color: #0891b2; }
+.kpi-orange  { background: rgba(234, 88, 12, 0.12);  color: #ea580c; }
+.kpi-green   { background: rgba(22, 163, 74, 0.12);  color: #16a34a; }
+.kpi-emerald { background: rgba(5, 150, 105, 0.12);  color: #059669; }
+
+.kpi-body { min-width: 0; flex: 1; }
+
+.kpi-body > span {
+    display: block;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+    font-weight: 550;
+    margin-bottom: 2px;
+}
+
+.kpi-body > strong {
+    display: block;
+    color: var(--admin-dark, #0f172a);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.kpi-body > small {
+    display: block;
+    margin-top: 3px;
+    color: #94a3b8;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+/* ==========================================================
+   3. CHART LAYOUT
+========================================================== */
+
+.analytics-chart-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.analytics-chart-grid.two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.analytics-bottom-grid {
+    margin-bottom: 0;
+}
+
+/* ==========================================================
+   4. CHART CARD
+========================================================== */
+
+.chart-card {
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--admin-transition, all 0.25s ease);
+}
+
+.chart-card:hover {
+    box-shadow: var(--admin-shadow, 0 8px 25px rgba(15,23,42,0.07));
+}
+
+.chart-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.chart-card-header > div { min-width: 0; }
+
+.chart-card-header h2 {
+    margin: 0;
+    color: var(--admin-dark, #0f172a);
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.chart-card-header p {
+    margin: 3px 0 0;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+}
+
+.chart-card-header > i {
+    flex-shrink: 0;
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+.chart-canvas-wrap {
+    position: relative;
+    padding: 18px 22px 22px;
+    flex: 1;
+    min-height: 240px;
+}
+
+.chart-canvas-wrap canvas {
+    display: block;
+    width: 100% !important;
+}
+
+.chart-canvas-wrap.chart-doughnut {
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-canvas-wrap.chart-tall {
+    min-height: 320px;
+}
+
+/* ==========================================================
+   5. ANALYTICS PANEL (tables)
+========================================================== */
+
+.analytics-panel {
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+    overflow: hidden;
+}
+
+.analytics-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.analytics-panel-header h2 {
+    margin: 0;
+    color: var(--admin-dark, #0f172a);
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.analytics-panel-header p {
+    margin: 3px 0 0;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+}
+
+.analytics-panel-header > i {
+    flex-shrink: 0;
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+.panel-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    color: var(--admin-primary, #2563eb);
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--admin-transition, all 0.25s ease);
+}
+
+.panel-action i {
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+.panel-action:hover { color: var(--admin-primary-dark, #1d4ed8); }
+.panel-action:hover i { transform: translateX(3px); }
+
+/* ==========================================================
+   6. MINI TABLE
+========================================================== */
+
+.companies-mini-table { min-width: 0; }
+
+.companies-mini-table th,
+.companies-mini-table td {
+    padding: 12px 22px;
+    font-size: 12px;
+}
+
+.table-user-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.table-user-link strong {
+    display: block;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--admin-text, #0f172a);
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+
+.table-user-link:hover strong { color: var(--admin-primary, #2563eb); }
+
+.metric-highlight {
+    color: var(--admin-primary, #2563eb);
+    font-weight: 700;
+}
+
+/* ==========================================================
+   7. INTERVIEW STATS
+========================================================== */
+
+.interview-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--admin-border-light, #f1f5f9);
+    border-bottom: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.interview-stat {
+    padding: 18px 12px;
+    background: var(--admin-white, #fff);
+    text-align: center;
+}
+
+.interview-stat strong {
+    display: block;
+    color: var(--admin-dark, #0f172a);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.interview-stat span {
+    display: block;
+    margin-top: 3px;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 10px;
+    font-weight: 550;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================================
+   8. COMPLETION BAR
+========================================================== */
+
+.completion-bar {
+    padding: 20px 22px;
+}
+
+.completion-bar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.completion-bar-header span {
+    color: var(--admin-text-muted, #64748b);
+    font-size: 12px;
+    font-weight: 550;
+}
+
+.completion-bar-header strong {
+    color: var(--admin-primary, #2563eb);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.completion-bar-track {
+    height: 8px;
+    border-radius: 50px;
+    background: var(--admin-border-light, #f1f5f9);
+    overflow: hidden;
+}
+
+.completion-bar-track > span {
+    display: block;
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    transition: width 0.6s ease;
+}
+
+/* ==========================================================
+   9. EMPTY INLINE
+========================================================== */
+
+.empty-inline {
+    padding: 40px 22px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.empty-inline i {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 26px;
+    color: #cbd5e1;
+}
+
+.empty-inline p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* ==========================================================
+   10. RESPONSIVE
+========================================================== */
+
+@media (max-width: 1400px) {
+    .analytics-kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1200px) {
+    .analytics-chart-grid.two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .admin-analytics-page { padding: 22px; }
+
+    .admin-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .period-switcher {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .period-btn { flex-shrink: 0; }
+
+    .interview-stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .admin-analytics-page { padding: 20px 16px; }
+
+    .analytics-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .chart-canvas-wrap { padding: 14px 16px 18px; min-height: 220px; }
+    .chart-canvas-wrap.chart-tall { min-height: 260px; }
+    .chart-canvas-wrap.chart-doughnut { min-height: 240px; }
+
+    .chart-card-header { padding: 14px 16px; }
+    .analytics-panel-header { padding: 14px 16px; }
+
+    .companies-mini-table th,
+    .companies-mini-table td { padding: 10px 16px; }
+}
+
+@media (max-width: 480px) {
+    .admin-analytics-page { padding: 16px 12px; }
+
+    .analytics-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-icon { width: 42px; height: 42px; font-size: 16px; }
+    .kpi-body > strong { font-size: 20px; }
+
+    .interview-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==========================================================
+   11. DARK MODE
+========================================================== */
+
+body.dark-mode .admin-analytics-page { color: #e2e8f0; }
+
+body.dark-mode .period-switcher,
+body.dark-mode .analytics-kpi-card,
+body.dark-mode .chart-card,
+body.dark-mode .analytics-panel {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .period-btn { color: #cbd5e1; }
+body.dark-mode .period-btn:hover { background: #172033; color: #93c5fd; }
+
+body.dark-mode .kpi-body > strong,
+body.dark-mode .chart-card-header h2,
+body.dark-mode .analytics-panel-header h2,
+body.dark-mode .interview-stat strong,
+body.dark-mode .table-user-link strong {
+    color: #f8fafc;
+}
+
+body.dark-mode .chart-card-header,
+body.dark-mode .analytics-panel-header,
+body.dark-mode .interview-stats,
+body.dark-mode .interview-stat {
+    border-color: #334155;
+}
+
+body.dark-mode .interview-stat {
+    background: #1e293b;
+}
+
+body.dark-mode .kpi-body > span,
+body.dark-mode .kpi-body > small,
+body.dark-mode .chart-card-header p,
+body.dark-mode .analytics-panel-header p,
+body.dark-mode .interview-stat span,
+body.dark-mode .completion-bar-header span {
+    color: #94a3b8;
+}
+
+body.dark-mode .completion-bar-track {
+    background: #172033;
+}
+
+body.dark-mode .chart-card-header > i,
+body.dark-mode .analytics-panel-header > i {
+    color: #475569;
+}
+
+/* ==========================================================
+   12. REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .analytics-kpi-card,
+    .period-btn,
+    .panel-action,
+    .panel-action i,
+    .completion-bar-track > span {
+        transition: none;
+    }
+    .analytics-kpi-card:hover { transform: none; }
+}

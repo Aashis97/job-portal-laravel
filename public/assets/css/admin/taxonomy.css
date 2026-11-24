@@ -1,0 +1,169 @@
+.admin-taxonomy-page {
+    width: min(1500px, 100%);
+    margin: 0 auto;
+    padding: 28px;
+}
+
+.taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+.taxonomy-panel {
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, .05);
+}
+
+.taxonomy-panel-header,
+.taxonomy-item-heading,
+.taxonomy-item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.taxonomy-panel-header {
+    padding: 22px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.taxonomy-panel-header h2,
+.taxonomy-create-form h3 {
+    margin: 0;
+    color: #111827;
+}
+
+.taxonomy-panel-header p {
+    margin: 6px 0 0;
+    color: #6b7280;
+    font-size: .9rem;
+}
+
+.taxonomy-count {
+    display: inline-grid;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 8px;
+    place-items: center;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.taxonomy-create-form,
+.taxonomy-item {
+    display: grid;
+    gap: 14px;
+    padding: 20px 22px;
+}
+
+.taxonomy-create-form {
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.taxonomy-item {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.taxonomy-item:last-child {
+    border-bottom: 0;
+}
+
+.taxonomy-item-heading {
+    margin-bottom: 4px;
+}
+
+.taxonomy-item-heading strong {
+    color: #111827;
+}
+
+.taxonomy-item-heading span {
+    color: #6b7280;
+    font-size: .8rem;
+    text-align: right;
+}
+
+.taxonomy-create-form label,
+.taxonomy-item label {
+    display: grid;
+    gap: 6px;
+    color: #374151;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.taxonomy-create-form input,
+.taxonomy-create-form textarea,
+.taxonomy-create-form select,
+.taxonomy-item input,
+.taxonomy-item textarea,
+.taxonomy-item select {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #111827;
+    font: inherit;
+}
+
+.taxonomy-item-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.taxonomy-item-actions {
+    justify-content: flex-end;
+}
+
+.taxonomy-item-actions label {
+    margin-right: auto;
+}
+
+.taxonomy-delete-form {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 12px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+.taxonomy-delete-form .btn:disabled {
+    cursor: not-allowed;
+    opacity: .6;
+}
+
+@media (max-width: 1000px) {
+    .taxonomy-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-taxonomy-page {
+        padding: 16px;
+    }
+
+    .taxonomy-panel-header {
+        padding: 18px;
+    }
+
+    .taxonomy-create-form,
+    .taxonomy-item {
+        padding: 16px 18px;
+    }
+
+    .taxonomy-item-fields {
+        grid-template-columns: 1fr;
+    }
+}

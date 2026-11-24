@@ -1,0 +1,151 @@
+/* ==========================================================
+   Online Job Portal System
+   Employer Module — Design Tokens
+   File: assets/css/employer/_tokens.css
+
+   Loaded once globally (dashboard_header.php) BEFORE any
+   page-specific CSS. Page CSS may still define its own
+   --app-* / --ai-* / --cp-* aliases; those keep working.
+   New / refactored code should consume --brand-* / --neutral-*.
+   ========================================================== */
+
+:root {
+
+    /* ======================================================
+       Brand blue ramp
+       ====================================================== */
+    --brand-50:  #eff6ff;
+    --brand-100: #dbeafe;
+    --brand-200: #bfdbfe;
+    --brand-300: #93c5fd;
+    --brand-400: #60a5fa;
+    --brand-500: #2563eb;   /* primary */
+    --brand-600: #1d4ed8;   /* hover */
+    --brand-700: #1e40af;
+    --brand-800: #1e3a8a;   /* deep secondary */
+    --brand-900: #0f172a;   /* near-black navy */
+
+    /* ======================================================
+       Neutral slate ramp
+       ====================================================== */
+    --neutral-50:  #f8fafc;
+    --neutral-100: #f1f5f9;
+    --neutral-200: #e2e8f0;
+    --neutral-300: #cbd5e1;
+    --neutral-400: #94a3b8;
+    --neutral-500: #64748b;
+    --neutral-600: #475569;
+    --neutral-700: #334155;
+    --neutral-800: #1e293b;
+    --neutral-900: #0f172a;
+
+    /* ======================================================
+       Semantic — success
+       ====================================================== */
+    --success-50:  #f0fdf4;
+    --success-100: #dcfce7;
+    --success-200: #bbf7d0;
+    --success-500: #16a34a;
+    --success-600: #15803d;
+    --success-700: #166534;
+
+    /* ======================================================
+       Semantic — warning
+       ====================================================== */
+    --warn-50:  #fffbeb;
+    --warn-100: #fef3c7;
+    --warn-200: #fde68a;
+    --warn-500: #d97706;
+    --warn-600: #b45309;
+    --warn-700: #92400e;
+
+    /* ======================================================
+       Semantic — danger
+       ====================================================== */
+    --danger-50:  #fef2f2;
+    --danger-100: #fee2e2;
+    --danger-200: #fecaca;
+    --danger-500: #dc2626;
+    --danger-600: #b91c1c;
+    --danger-700: #991b1b;
+
+    /* ======================================================
+       Semantic — info (cyan)
+       ====================================================== */
+    --info-50:  #ecfeff;
+    --info-100: #cffafe;
+    --info-200: #a5f3fc;
+    --info-500: #0891b2;
+    --info-600: #0e7490;
+    --info-700: #155e75;
+
+    /* ======================================================
+       Semantic — AI / purple
+       ====================================================== */
+    --purple-50:  #f5f3ff;
+    --purple-100: #ede9fe;
+    --purple-200: #ddd6fe;
+    --purple-500: #7c3aed;
+    --purple-600: #6d28d9;
+    --purple-700: #4c1d95;
+
+    /* ======================================================
+       Text — accessible by default
+       ====================================================== */
+    --text-strong: var(--neutral-900);   /* body text */
+    --text-base:   var(--neutral-700);   /* secondary text */
+    --text-muted:  var(--neutral-500);   /* helper text (4.76:1) */
+    --text-dim:    var(--neutral-400);   /* large text only */
+
+    /* ======================================================
+       Surfaces
+       ====================================================== */
+    --surface-0:    #ffffff;
+    --surface-50:   var(--neutral-50);
+    --surface-100:  var(--neutral-100);
+    --surface-200:  var(--neutral-200);
+
+    /* ======================================================
+       Borders
+       ====================================================== */
+    --border-soft:   var(--neutral-200);
+    --border-strong: var(--neutral-300);
+
+    /* ======================================================
+       Radii
+       ====================================================== */
+    --radius-xs:   6px;
+    --radius-sm:   8px;
+    --radius-md:   12px;
+    --radius-lg:   16px;
+    --radius-xl:   20px;
+    --radius-pill: 999px;
+
+    /* ======================================================
+       Shadows
+       ====================================================== */
+    --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 18px 45px rgba(15, 23, 42, 0.12);
+
+    /* ======================================================
+       Focus ring
+       ====================================================== */
+    --focus-ring:        0 0 0 3px rgba(37, 99, 235, 0.25);
+    --focus-ring-tight:  0 0 0 2px rgba(37, 99, 235, 0.35);
+    --focus-ring-danger: 0 0 0 3px rgba(220, 38, 38, 0.22);
+
+    /* ======================================================
+       Motion
+       ====================================================== */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ======================================================
+       Layout
+       ====================================================== */
+    --content-max:   1500px;
+    --content-gutter: 24px;
+}

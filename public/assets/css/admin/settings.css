@@ -1,0 +1,450 @@
+/* ==========================================================
+   Online Job Portal System
+   Admin — Settings
+   File: assets/css/admin/settings.css
+   ========================================================== */
+
+.admin-settings-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--admin-text, #0f172a);
+}
+
+.page-header-actions { display: flex; gap: 10px; }
+
+.admin-settings-page .admin-alert {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+}
+
+.admin-settings-page .admin-alert i { font-size: 18px; flex-shrink: 0; }
+.admin-settings-page .admin-alert-danger  { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+.admin-settings-page .admin-alert-warning { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.admin-settings-page .admin-alert span { font-size: 13px; font-weight: 550; }
+
+/* ==========================================================
+   Read-only block
+========================================================== */
+
+.settings-readonly {
+    background: #f8fafc;
+    border: 1px dashed var(--admin-border, #e2e8f0);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+}
+
+.readonly-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.readonly-header i {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(100, 116, 139, 0.14);
+    color: #475569;
+    font-size: 14px;
+}
+
+.readonly-header strong {
+    display: block;
+    color: var(--admin-dark, #0f172a);
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.readonly-header span {
+    display: block;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.readonly-header code {
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: #e2e8f0;
+    font-size: 11px;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+}
+
+.readonly-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+}
+
+.readonly-grid > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    font-size: 12px;
+}
+
+.readonly-grid span {
+    color: var(--admin-text-muted, #64748b);
+    font-weight: 550;
+}
+
+.readonly-grid strong {
+    color: var(--admin-text, #0f172a);
+    font-weight: 600;
+    text-align: right;
+    word-break: break-all;
+    font-size: 12px;
+}
+
+/* ==========================================================
+   Tabs
+========================================================== */
+
+.settings-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    padding: 6px;
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: var(--admin-radius, 14px);
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+}
+
+.settings-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 9px;
+    color: var(--admin-text-light, #475569);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 550;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+}
+
+.settings-tab:hover {
+    background: var(--admin-border-light, #f1f5f9);
+    color: var(--admin-primary, #2563eb);
+}
+
+.settings-tab.active {
+    background: var(--admin-primary, #2563eb);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.20);
+}
+
+.settings-tab i { font-size: 12px; }
+
+/* ==========================================================
+   Form card
+========================================================== */
+
+.settings-form-card {
+    background: var(--admin-white, #fff);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: 14px;
+    box-shadow: var(--admin-shadow-sm, 0 2px 8px rgba(15,23,42,0.05));
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.settings-form-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.settings-form-header h2 {
+    margin: 0;
+    color: var(--admin-dark, #0f172a);
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.settings-form-header p {
+    margin: 4px 0 0;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+}
+
+.settings-form-body { padding: 6px 0; }
+
+.setting-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+    gap: 24px;
+    align-items: start;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--admin-border-light, #f1f5f9);
+}
+
+.setting-row:last-child { border-bottom: none; }
+
+.setting-row.setting-type-text,
+.setting-row.setting-type-url {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.setting-label { min-width: 0; }
+
+.setting-label label {
+    display: block;
+    color: var(--admin-text, #0f172a);
+    font-size: 13px;
+    font-weight: 650;
+    margin-bottom: 3px;
+}
+
+.setting-label small {
+    display: block;
+    color: var(--admin-text-muted, #64748b);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.setting-field input[type="text"],
+.setting-field input[type="number"],
+.setting-field input[type="email"],
+.setting-field input[type="url"],
+.setting-field textarea {
+    width: 100%;
+    min-height: 42px;
+    padding: 0 14px;
+    border: 1px solid var(--admin-border, #e2e8f0);
+    border-radius: 9px;
+    background: var(--admin-white, #fff);
+    color: var(--admin-text, #0f172a);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: var(--admin-transition, all 0.25s ease);
+    box-sizing: border-box;
+}
+
+.setting-field textarea {
+    min-height: 90px;
+    padding: 12px 14px;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+.setting-field input:focus,
+.setting-field textarea:focus {
+    border-color: var(--admin-primary, #2563eb);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.switch input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.switch-track {
+    display: block;
+    width: 48px;
+    height: 28px;
+    border-radius: 100px;
+    background: #cbd5e1;
+    transition: background 0.2s ease;
+    position: relative;
+}
+
+.switch-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+    transition: transform 0.2s ease;
+}
+
+.switch input[type="checkbox"]:checked + .switch-track {
+    background: var(--admin-primary, #2563eb);
+}
+
+.switch input[type="checkbox"]:checked + .switch-track .switch-thumb {
+    transform: translateX(20px);
+}
+
+.switch input[type="checkbox"]:focus-visible + .switch-track {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* ==========================================================
+   Actions row
+========================================================== */
+
+.settings-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.admin-settings-page .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 42px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--admin-transition, all 0.25s ease);
+    white-space: nowrap;
+}
+
+.admin-settings-page .btn-primary {
+    background: var(--admin-primary, #2563eb);
+    color: #fff;
+}
+
+.admin-settings-page .btn-primary:hover {
+    background: var(--admin-primary-dark, #1d4ed8);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+.admin-settings-page .btn-light {
+    background: var(--admin-border-light, #f1f5f9);
+    border: 1px solid var(--admin-border, #e2e8f0);
+    color: var(--admin-text-light, #475569);
+}
+
+.admin-settings-page .btn-light:hover { background: var(--admin-border, #e2e8f0); }
+
+/* Empty */
+.empty-inline {
+    padding: 50px 24px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.empty-inline i {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 32px;
+    color: #cbd5e1;
+}
+
+.empty-inline p { margin: 0; font-size: 13px; }
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width: 768px) {
+    .admin-settings-page { padding: 20px 16px; }
+
+    .readonly-grid { grid-template-columns: 1fr; }
+
+    .setting-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px 18px;
+    }
+
+    .settings-actions { flex-direction: column-reverse; }
+    .settings-actions .btn { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .admin-settings-page { padding: 16px 12px; }
+    .settings-tabs { overflow-x: auto; flex-wrap: nowrap; }
+    .settings-tab { flex-shrink: 0; }
+}
+
+/* Dark mode */
+body.dark-mode .admin-settings-page { color: #e2e8f0; }
+
+body.dark-mode .settings-readonly,
+body.dark-mode .settings-tabs,
+body.dark-mode .settings-form-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .settings-form-header,
+body.dark-mode .setting-row {
+    border-color: #334155;
+}
+
+body.dark-mode .settings-form-header h2,
+body.dark-mode .setting-label label,
+body.dark-mode .readonly-header strong,
+body.dark-mode .readonly-grid strong {
+    color: #f8fafc;
+}
+
+body.dark-mode .settings-form-header p,
+body.dark-mode .setting-label small,
+body.dark-mode .readonly-header span,
+body.dark-mode .readonly-grid span {
+    color: #94a3b8;
+}
+
+body.dark-mode .settings-tab { color: #cbd5e1; }
+body.dark-mode .settings-tab:hover { background: #172033; }
+
+body.dark-mode .setting-field input,
+body.dark-mode .setting-field textarea {
+    background: #172033;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .admin-settings-page .btn-light {
+    background: #172033;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .readonly-header code {
+    background: #334155;
+    color: #cbd5e1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .settings-tab,
+    .admin-settings-page .btn,
+    .switch-track,
+    .switch-thumb {
+        transition: none;
+    }
+}
